@@ -1,10 +1,32 @@
+import {useState} from 'react'
 import './App.css';
-function App() {
+
+const navItems = [
+	{title: 'Home', id: "home"},
+	{title: 'About', id: "about", className: "bg-blue-600"},
+	{title: 'Projects', id: "projects", className: "bg-white-600"},
+	{title: 'Contact', id: "contact", className: "bg-purple-600"},
+	{title: 'Reviews', id: "reviews", className: "bg-pink-600"},
+]
+const App = () => {
+	const [activeNavItem, setActiveNavItem] = useState("home")
+	const handleClickNavItem = (e, item) => {
+		e.preventDefault()
+		setActiveNavItem(item.id)
+		const element = document.getElementById(item.id);
+		element.scrollIntoView(element);
+	}
 	return (
 		<main>
-			<div className='menu flex justify-between items-center p-4'>
+			<div className='menu flex justify-between items-center p-4' id="home">
 				<h1>code with laura</h1>
-				<div></div>
+				<div id="navbar" className="flex gap-4">
+					{navItems.map((item) => {
+						return (
+							<button onClick={(e) => handleClickNavItem(e, item)} className={activeNavItem === item.id ? 'text-bold border-b' : ''}>{item.title}</button>
+						)
+					})}
+				</div>
 			</div>
 			<div className='hero flex h-[80vh] items-center justify-around bg-orange-600 p-8 text-white'>
 				<div className='hero-text'>
@@ -14,10 +36,13 @@ function App() {
 				</div>
 				<div className='hero-image h-inherit'></div>
 			</div>
-			<div className='section-projects h-[80vh] bg-blue-600'></div>
-			<div className='section-about h-[80vh] bg-white-600'></div>
-			<div className='section-reviews h-[80vh] bg-purple-600'></div>
-			<div className='section-contact h-[80vh] bg-pink-600'></div>
+			{navItems.filter((item) => item.id !== "home").map((item) => {
+				return (
+					<div id={item.id} className={`h-[80vh] p-4 ${item.className}`}>
+						<h1 className="text-center">{item.title}</h1>
+					</div>
+				)
+			})}
 		</main>
 	);
 }
