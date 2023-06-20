@@ -40,11 +40,11 @@ const App = () => {
 	
 	return (
 		<main>
-			<div className='menu flex justify-between items-center p-4' id="home">
+			<div className='menu flex justify-between items-center p-4 sticky top-0 bg-white w-full opacity-[75%]'>
 				<h1>code with laura</h1>
-				<div id="navbar" className="flex gap-4">
-					{navItems.map((item) => {
-						return (
+					<div id="navbar" className="flex gap-4">
+						{navItems.map((item) => {
+							return (
 								<button key={item.id} onClick={(e) => handleClickNavItem(e, item)} className={activeNavItem === item.id ? 'text-bold border-b' : ''}>{item.title}</button>
 							)
 						})}
