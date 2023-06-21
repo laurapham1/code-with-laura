@@ -11,13 +11,6 @@ const navItems = [
 const App = () => {
 	const [activeNavItem, setActiveNavItem] = useState('home')
 
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll, { passive: true });
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
 	const handleScroll = () => {
 		const activeNavPosition = document.getElementById(activeNavItem).getBoundingClientRect()		
 		if (activeNavPosition.height - Math.abs(activeNavPosition.top) < activeNavPosition.height/2 || activeNavPosition.height - Math.abs(activeNavPosition.bottom) < activeNavPosition.height/2) {
@@ -32,18 +25,28 @@ const App = () => {
 		}
 	};
 
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [handleScroll]);
+
+
 	const handleClickNavItem = (e, item) => {
 		e.preventDefault()
 		setActiveNavItem(item.id)
 		const element = document.getElementById(item.id);
-		element.scrollIntoView(element);
+		const navElement = document.getElementById('navbar')
+		const newTop = window.scrollY + element.getBoundingClientRect().top - navElement.getBoundingClientRect().height 
+		window.scrollTo({top:newTop} )
 	}
 	
 	return (
 		<main>
-			<div className='menu flex justify-between items-center p-4 sticky top-0 bg-white w-full opacity-[75%]'>
+			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white w-full opacity-[75%]'>
 				<h1>code with laura</h1>
-					<div id="navbar" className="flex gap-4">
+					<div className="flex gap-4">
 						{navItems.map((item) => {
 							return (
 								<button key={item.id} onClick={(e) => handleClickNavItem(e, item)} className={activeNavItem === item.id ? 'text-bold border-b' : ''}>{item.title}</button>
