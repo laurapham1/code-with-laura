@@ -10,13 +10,7 @@ const navItems = [
 ]
 const App = () => {
 	const [activeNavItem, setActiveNavItem] = useState('home')
-	const handleClickNavItem = (e, item) => {
-		e.preventDefault()
-		setActiveNavItem(item.id)
-		const element = document.getElementById(item.id);
-		element.scrollIntoView(element);
-	}
-	// todo: update the active nav item as the page scrolls
+
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => {
@@ -37,6 +31,13 @@ const App = () => {
 			}
 		}
 	};
+
+	const handleClickNavItem = (e, item) => {
+		e.preventDefault()
+		setActiveNavItem(item.id)
+		const element = document.getElementById(item.id);
+		element.scrollIntoView(element);
+	}
 	
 	return (
 		<main>
