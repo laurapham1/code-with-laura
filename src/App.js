@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import './App.css';
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const navItems = [
 	{title: 'Home', id: "home"},
@@ -56,10 +57,14 @@ const App = () => {
 				</div>
 			<div id="home" className="section">
 				<div className='hero flex h-[80vh] items-center justify-around bg-orange-600 p-8 text-white'>
-					<div className='hero-text'>
-						<h1 className='text-bold'>I am Laura Pham</h1>
-						<p>And I'm a software engineer</p>
-						<div className='social-icons'></div>
+					<div className='hero-text flex flex-col gap-4'>
+						<span><h1 className='text-bold'>I am Laura Pham</h1>
+						<p>And I'm a software engineer</p></span>
+						<div className='social-icons flex flex-row gap-2'>
+							<button className="hover:scale-125 ease-in-out duration-300"><FaInstagram/></button>
+							<button className="hover:scale-125 ease-in-out duration-300"><FaLinkedin/></button>
+							
+						</div>
 					</div>
 					<div className='hero-image h-inherit'></div>
 				</div>
