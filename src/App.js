@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import './App.css';
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ const navItems = [
 const App = () => {
 	const [activeNavItem, setActiveNavItem] = useState('home')
 
-	const handleScroll = () => {
+	const handleScroll = useCallback(() => {
 		const activeNavPosition = document.getElementById(activeNavItem).getBoundingClientRect()		
 		if (activeNavPosition.height - Math.abs(activeNavPosition.top) < activeNavPosition.height/2 || activeNavPosition.height - Math.abs(activeNavPosition.bottom) < activeNavPosition.height/2) {
 			const sectionElements = document.querySelectorAll('.section')
@@ -24,7 +24,7 @@ const App = () => {
 				setActiveNavItem(newActiveElement?.id)
 			}
 		}
-	};
+	}, [activeNavItem]);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll, { passive: true });
@@ -58,8 +58,10 @@ const App = () => {
 			<div id="home" className="section">
 				<div className='hero flex h-[80vh] items-center justify-around bg-orange-600 p-8 text-white'>
 					<div className='hero-text flex flex-col gap-4'>
-						<span><h1 className='text-bold'>I am Laura Pham</h1>
-						<p>And I'm a software engineer</p></span>
+						<span>
+							<h1 className='text-bold'>I am Laura Pham</h1>
+							<p>And I'm a software engineer</p>
+						</span>
 						<div className='social-icons flex flex-row gap-2'>
 							<button className="hover:scale-125 ease-in-out duration-300"><FaInstagram/></button>
 							<button className="hover:scale-125 ease-in-out duration-300"><FaLinkedin/></button>
