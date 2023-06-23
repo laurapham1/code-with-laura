@@ -1,13 +1,14 @@
 import {useState, useEffect, useCallback} from 'react'
 import './App.css';
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import Projects from './components/Projects';
 
 const navItems = [
 	{title: 'Home', id: "home"},
-	{title: 'About', id: "about", className: "bg-blue-600"},
-	{title: 'Projects', id: "projects", className: "bg-white-600"},
-	{title: 'Contact', id: "contact", className: "bg-purple-600"},
-	{title: 'Reviews', id: "reviews", className: "bg-pink-600"},
+	{title: 'About', id: "about"},
+	{title: 'Projects', id: "projects", className: "bg-orange-600 text-white", contents: <Projects/>},
+	{title: 'Contact', id: "contact"},
+	{title: 'Reviews', id: "reviews", className: "bg-orange-600 text-white"},
 ]
 const App = () => {
 	const [activeNavItem, setActiveNavItem] = useState('home')
@@ -44,9 +45,9 @@ const App = () => {
 	}
 	
 	return (
-		<main>
-			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white w-full opacity-[75%]'>
-				<h1>code with laura</h1>
+		<main className="">
+			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white w-full opacity-[75%] z-10'>
+				<h1>LAURA PHAM</h1>
 					<div className="flex gap-4">
 						{navItems.map((item) => {
 							return (
@@ -75,6 +76,7 @@ const App = () => {
 				return (
 					<div key={item.id} id={item.id} className={`h-[80vh] p-4 ${item.className} section`}>
 						<h1 className="text-center">{item.title}</h1>
+						{item.contents}
 					</div>
 				)
 			})}
