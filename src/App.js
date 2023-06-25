@@ -28,7 +28,7 @@ const App = () => {
 	}, [activeNavItem]);
 
 	useEffect(() => {
-		window.addEventListener('scroll', handleScroll, { passive: true });
+		window.addEventListener('scrollend', handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
@@ -41,7 +41,7 @@ const App = () => {
 		const element = document.getElementById(item.id);
 		const navElement = document.getElementById('navbar')
 		const newTop = window.scrollY + element.getBoundingClientRect().top - navElement.getBoundingClientRect().height 
-		window.scrollTo({top:newTop} )
+		window.scrollTo({top:newTop, behavior: 'smooth'} )
 	}
 	
 	return (
