@@ -41,17 +41,21 @@ const App = () => {
 		const element = document.getElementById(item.id);
 		const navElement = document.getElementById('navbar')
 		const newTop = window.scrollY + element.getBoundingClientRect().top - navElement.getBoundingClientRect().height 
-		window.scrollTo({top:newTop, behavior: 'smooth'} )
+		window.scrollTo({top:newTop} )
 	}
 	
 	return (
 		<main className="">
-			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white w-full opacity-[75%] z-10'>
+			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white/75 w-full z-10'>
 				<h1>LAURA PHAM</h1>
 					<div className="flex gap-4">
 						{navItems.map((item) => {
+							const isActiveNav = activeNavItem === item.id
 							return (
-								<button key={item.id} onClick={(e) => handleClickNavItem(e, item)} className={activeNavItem === item.id ? 'text-bold border-b' : ''}>{item.title}</button>
+								<span class={isActiveNav ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block` : ''}>
+									<button key={item.id} onClick={(e) => handleClickNavItem(e, item)} className={isActiveNav ? `relative text-white` : ""}>{item.title}</button>
+								</span>
+								
 							)
 						})}
 					</div>
