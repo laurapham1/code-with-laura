@@ -23,13 +23,16 @@ const Projects = () => {
         <main className="p-10">
             <div className="project-cards flex justify-center gap-4">
                 {projects.map((project, index) => {
-                    return <button className={`project-card relative h-[50vh] w-[50vh] bg-orange-400 shadow rounded flex items-end p-6 text-start text-black`} key={index} id={index} onClick={(e) => handleClickProject(e)}>
-                        <div>
+                    return (
+                    <>
+                    <button className={`project-card relative h-[50vh] w-[50vh] bg-white shadow rounded-md flex items-end text-start text-black`} key={index} id={index} onClick={(e) => handleClickProject(e)}>
+                        <div className="relative p-6">
                             <h1 className="text-light">{project.title}</h1>
                             <p>{project.description}</p>
                         </div>
                     </button>
-                })}
+                    </>
+                )})}
             </div>
             
         </main>
