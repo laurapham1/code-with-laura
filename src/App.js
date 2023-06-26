@@ -6,9 +6,9 @@ import Projects from './components/Projects';
 const navItems = [
 	{title: 'Home', id: "home"},
 	{title: 'About', id: "about"},
-	{title: 'Projects', id: "projects", className: "bg-orange-600 text-white", contents: <Projects/>},
+	{title: 'Projects', id: "projects", className: "bg-cyan-600 text-white", contents: <Projects/>},
 	{title: 'Contact', id: "contact"},
-	{title: 'Reviews', id: "reviews", className: "bg-orange-600 text-white"},
+	{title: 'Reviews', id: "reviews", className: "bg-cyan-600 text-white"},
 ]
 const App = () => {
 	const [activeNavItem, setActiveNavItem] = useState('home')
@@ -53,7 +53,7 @@ const App = () => {
 						{navItems.map((item) => {
 							const isActiveNav = activeNavItem === item.id
 							return (
-								<span class={isActiveNav ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block` : ''}>
+								<span class={isActiveNav ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-cyan-600 relative inline-block` : ''}>
 									<button key={item.id} onClick={(e) => handleClickNavItem(e, item)} className={isActiveNav ? `relative text-white` : ""}>{item.title}</button>
 								</span>
 								
@@ -62,7 +62,7 @@ const App = () => {
 						</div>
 				</div>
 			<div id="home" className="section">
-				<div className='hero flex h-[95vh] items-center justify-around bg-orange-600 p-8 text-white'>
+				<div className='hero flex h-[85vh] items-center justify-around bg-cyan-600 p-8 text-white'>
 					<div className='hero-text flex flex-col gap-4'>
 						<span>
 							<h1 className='text-bold'>I am Laura Pham</h1>
@@ -79,7 +79,7 @@ const App = () => {
 			</div>
 			{navItems.filter((item) => item.id !== "home").map((item) => {
 				return (
-					<div key={item.id} id={item.id} className={`h-[80vh] p-4 ${item.className} section`}>
+					<div key={item.id} id={item.id} className={`h-[85vh] p-4 ${item.className} section`}>
 						<h1 className="text-center">{item.title}</h1>
 						{item.contents}
 					</div>
