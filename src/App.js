@@ -5,10 +5,10 @@ import Projects from './components/Projects';
 
 const navItems = [
 	{title: 'Home', id: "home"},
-	{title: 'About', id: "about"},
+	{title: 'About', id: "about", contents: <p>Bringing keen attention to user experience to engineering</p>},
 	{title: 'Projects', id: "projects", className: "bg-cyan-600 text-white", contents: <Projects/>},
-	{title: 'Contact', id: "contact"},
-	{title: 'Reviews', id: "reviews", className: "bg-cyan-600 text-white"},
+	{title: 'Reviews', id: "reviews"},
+	{title: 'Contact', id: "contact", className: "bg-cyan-600 text-white"},
 ]
 const App = () => {
 	const [activeNavItem, setActiveNavItem] = useState('home')
@@ -47,9 +47,9 @@ const App = () => {
 	return (
 		<main className="">
 			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white/75 w-full z-10'>
-				<h1>LAURA PHAM</h1>
+				<h1 className="font-bold tracking-tight">LAURA PHAM</h1>
 						<div className="block md:hidden"><button><FaBars/></button></div>
-						<div className="gap-4 items-center hidden md:flex">
+						<div className="gap-4 items-center hidden md:flex font-light">
 						{navItems.map((item) => {
 							const isActiveNav = activeNavItem === item.id
 							return (
@@ -64,9 +64,10 @@ const App = () => {
 			<div id="home" className="section">
 				<div className='hero flex h-[85vh] items-center justify-around bg-cyan-600 p-8 text-white'>
 					<div className='hero-text flex flex-col gap-4'>
-						<span>
-							<h1 className='text-bold'>I am Laura Pham</h1>
-							<p>And I'm a software engineer</p>
+						<span className="text-xl">
+							<h1 className=''>Hi, I'm Laura 👋</h1>
+							<p>Educator turned Software engineer</p>
+							<p>Blending a keen user focus into engineering</p>
 						</span>
 						<div className='social-icons flex flex-row gap-2'>
 							<button className="hover:scale-125 ease-in-out duration-300"><FaInstagram/></button>
@@ -80,7 +81,7 @@ const App = () => {
 			{navItems.filter((item) => item.id !== "home").map((item) => {
 				return (
 					<div key={item.id} id={item.id} className={`h-[85vh] p-4 ${item.className} section`}>
-						<h1 className="text-center">{item.title}</h1>
+						<h1 className="text-center font-light tracking-tight text-lg">{item.title}</h1>
 						{item.contents}
 					</div>
 				)
