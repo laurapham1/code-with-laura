@@ -46,7 +46,7 @@ const App = () => {
 	
 	return (
 		<main className="">
-			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white/75 w-full z-10'>
+			<div id="navbar" className='menu flex justify-between items-center p-4 fixed top-0 bg-white/75 z-10 rounded-xl m-4 w-[-webkit-fill-available]'>
 				<h1 className="font-bold tracking-tight">LAURA PHAM</h1>
 						<div className="block md:hidden"><button><FaBars/></button></div>
 						<div className="gap-4 items-center hidden md:flex font-light">
