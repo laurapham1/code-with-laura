@@ -1,6 +1,6 @@
 import {useState, useEffect, useCallback} from 'react'
 import './App.css';
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Projects from './components/Projects';
 
 const navItems = [
@@ -48,7 +48,8 @@ const App = () => {
 		<main className="">
 			<div id="navbar" className='menu flex justify-between items-center p-4 sticky top-0 bg-white/75 w-full z-10'>
 				<h1>LAURA PHAM</h1>
-					<div className="flex gap-4">
+						<div className="block md:hidden"><button><FaBars/></button></div>
+						<div className="gap-4 items-center hidden md:flex">
 						{navItems.map((item) => {
 							const isActiveNav = activeNavItem === item.id
 							return (
@@ -58,10 +59,10 @@ const App = () => {
 								
 							)
 						})}
-					</div>
+						</div>
 				</div>
 			<div id="home" className="section">
-				<div className='hero flex h-[80vh] items-center justify-around bg-orange-600 p-8 text-white'>
+				<div className='hero flex h-[95vh] items-center justify-around bg-orange-600 p-8 text-white'>
 					<div className='hero-text flex flex-col gap-4'>
 						<span>
 							<h1 className='text-bold'>I am Laura Pham</h1>
