@@ -40,13 +40,13 @@ const App = () => {
 		setActiveNavItem(item.id)
 		const element = document.getElementById(item.id);
 		const navElement = document.getElementById('navbar')
-		const newTop = window.scrollY + element.getBoundingClientRect().top - navElement.getBoundingClientRect().height 
+		const newTop = window.scrollY + element.getBoundingClientRect().top - navElement.getBoundingClientRect().bottom 
 		window.scrollTo({top:newTop, behavior: 'smooth'} )
 	}
 	
 	return (
 		<main className="">
-			<div id="navbar" className='menu flex justify-between items-center p-4 fixed top-0 bg-white/75 z-10 rounded-xl m-4 w-[-webkit-fill-available]'>
+			<div id="navbar" className='menu flex justify-between items-center p-4 fixed top-0 bg-white/95 z-10 rounded-md m-2 w-[-webkit-fill-available] shadow'>
 				<h1 className="font-bold tracking-tight">LAURA PHAM</h1>
 						<div className="block md:hidden"><button><FaBars/></button></div>
 						<div className="gap-4 items-center hidden md:flex font-light">
@@ -67,7 +67,6 @@ const App = () => {
 						<span className="text-xl">
 							<h1 className=''>Hi, I'm Laura 👋</h1>
 							<p>Educator turned Software engineer</p>
-							<p>Blending a keen user focus into engineering</p>
 						</span>
 						<div className='social-icons flex flex-row gap-2'>
 							<button className="hover:scale-125 ease-in-out duration-300"><FaInstagram/></button>
