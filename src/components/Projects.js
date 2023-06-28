@@ -48,7 +48,7 @@ const Projects = () => {
                         return (
                             <>
                                 <button
-                                    className={`project-card bg-white shadow rounded-md flexf flex-col justify-end items-end text-start text-black`}
+                                    className={`project-card bg-white shadow rounded-md text-start`}
                                     key={index}
                                     id={index}
                                     onClick={(e) => handleClickProject(e)}
