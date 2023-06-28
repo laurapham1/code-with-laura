@@ -1,27 +1,37 @@
+import sammiImage from '../assets/images/sammi-mockup.png'
+import furrealImage from '../assets/images/furreal-mockup.png'
+import todolistImage from '../assets/images/todolist-mockup.png'
+import placeholderImage from '../assets/images/mrcocktail-mockup.png'
+
 const projects = [
     {
         title: 'Sammi',
         description: 'A mental health support app for teachers & students',
-        image: '',
+        image: sammiImage,
         link: '',
+        skills: ['ruby', 'javascript', 'rails']
     },
     {
         title: 'Furreal',
         description: 'A pet rental service app',
-        image: '',
+        image: furrealImage,
         link: '',
+        skills: ['ruby', 'javascript', 'rails']
     },
     {
         title: 'Fun to do list',
-        description: 'An aeshetic daily to do list',
-        image: '',
+        description: 'An aesthetic daily to do list',
+        image: todolistImage,
         link: '',
+        skills: ['react', 'javascript', 'node', 'graphql']
+
     },
     {
         title: 'Emotion Tracker',
         description: 'An emotion tracker/diary mobile app',
-        image: '',
+        image: placeholderImage,
         link: '',
+        skills: ['react native', 'javascript', 'graphql', 'node']
     },
 ]
 
@@ -38,16 +48,24 @@ const Projects = () => {
                         return (
                             <>
                                 <button
-                                    className={`project-card bg-white shadow rounded-md flex items-end text-start text-black`}
+                                    className={`project-card bg-white shadow rounded-md flexf flex-col justify-end items-end text-start text-black`}
                                     key={index}
                                     id={index}
                                     onClick={(e) => handleClickProject(e)}
                                 >
-                                    <div className="relative p-6">
-                                        <h1 className="text-light">
+                                    <img src={project.image} alt={`${project.title}-Mockup`} className="bg-cyan-100 rounded-t-md"/>
+                                    <div className="relative p-6 flex flex-col gap-2">
+                                        <h1 className="font-bold text-md">
                                             {project.title}
                                         </h1>
                                         <p>{project.description}</p>
+                                        <div className="gap-2 flex">
+
+                                        {project.skills.map((skill)=> {
+                                            return <span className="bg-gray-200 p-2 py-1 text-sm shadow rounded h-fit">{skill}</span>
+                                        })}
+                                        
+                                        </div>
                                     </div>
                                 </button>
                             </>
