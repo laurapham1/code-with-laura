@@ -15,11 +15,11 @@ const navItems = [
     {
         title: 'Projects',
         id: 'projects',
-        className: 'bg-cyan-600 text-white',
+        className: 'bg-sky-200',
         contents: <Projects />,
     },
     { title: 'Reviews', id: 'reviews' },
-    { title: 'Contact', id: 'contact', className: 'bg-cyan-600 text-white' },
+    { title: 'Contact', id: 'contact', className: 'bg-sky-200' },
 ]
 const App = () => {
     const [activeNavItem, setActiveNavItem] = useState('home')
@@ -81,14 +81,14 @@ const App = () => {
                         <FaBars />
                     </button>
                 </div>
-                <div className="gap-4 items-center hidden md:flex font-light">
+                <div className="gap-4 items-center hidden md:flex">
                     {navItems.map((item) => {
                         const isActiveNav = activeNavItem === item.id
                         return (
                             <span
                                 class={
                                     isActiveNav
-                                        ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-cyan-600 relative inline-block`
+                                        ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-200 relative inline-block`
                                         : ''
                                 }
                             >
@@ -96,7 +96,7 @@ const App = () => {
                                     key={item.id}
                                     onClick={(e) => handleClickNavItem(e, item)}
                                     className={
-                                        isActiveNav ? `relative text-white` : ''
+                                        isActiveNav ? `relative` : ''
                                     }
                                 >
                                     {item.title}
@@ -107,9 +107,9 @@ const App = () => {
                 </div>
             </div>
             <div id="home" className="section">
-                <div className="hero flex h-[85vh] items-center justify-around bg-cyan-600 p-8 text-white">
+                <div className="hero flex h-[85vh] items-center justify-around bg-sky-200 p-8">
                     <div className="hero-text flex flex-col gap-4">
-                        <span className="text-xl">
+                        <span className="text-xl font-light">
                             <h1 className="">Hi, I'm Laura 👋</h1>
                             <p>Educator turned Software engineer</p>
                         </span>
@@ -134,7 +134,7 @@ const App = () => {
                             id={item.id}
                             className={`min-h-[85vh] p-4 ${item.className} section`}
                         >
-                            <h1 className="text-center font-bold text-xl">
+                            <h1 className="text-center font-light text-xl">
                                 {item.title}
                             </h1>
                             {item.contents}
