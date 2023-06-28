@@ -132,7 +132,7 @@ const App = () => {
                         <div
                             key={item.id}
                             id={item.id}
-                            className={`h-[85vh] p-4 ${item.className} section`}
+                            className={`min-h-[85vh] p-4 ${item.className} section`}
                         >
                             <h1 className="text-center font-bold text-xl">
                                 {item.title}
