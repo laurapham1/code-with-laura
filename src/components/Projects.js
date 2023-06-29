@@ -43,12 +43,12 @@ const Projects = () => {
         <>
             {/* <h1 className="text-center">Projects</h1> */}
             <main className="p-8 h-full">
-                <div className="project-cards grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 h-full">
+                <div className="project-cards grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 h-full">
                     {projects.map((project, index) => {
                         return (
                             <>
                                 <button
-                                    className={`project-card bg-white shadow rounded-md text-start`}
+                                    className={`project-card bg-white shadow rounded-md text-start h-fit`}
                                     key={index}
                                     id={index}
                                     onClick={(e) => handleClickProject(e)}

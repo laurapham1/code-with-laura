@@ -15,14 +15,44 @@ const navItems = [
     {
         title: 'Projects',
         id: 'projects',
-        className: 'bg-sky-200',
+        className: 'bg-sky-100',
         contents: <Projects />,
     },
-    { title: 'Reviews', id: 'reviews' },
-    { title: 'Contact', id: 'contact', className: 'bg-sky-200' },
+    { title: 'Recommendations', id: 'recommendations'},
+    { title: 'Contact', id: 'contact', className: 'bg-sky-100' },
 ]
+
+const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
+    return (
+        navItems.map((item) => {
+            const isActiveNav = activeNavItem === item.id
+            return (
+                <span
+                    class={
+                        isActiveNav
+                            ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-100 relative inline-block`
+                            : ''
+                    }
+                >
+                    <button
+                        key={item.id}
+                        onClick={(e) => handleClickNavItem(e, item)}
+                        className={
+                            isActiveNav ? `relative` : ''
+                        }
+                    >
+                        {item.title}
+                    </button>
+                </span>
+            )
+        })
+    )
+}
+
 const App = () => {
     const [activeNavItem, setActiveNavItem] = useState('home')
+    const [isSubnavOpen, setIsSubnavOpen] = useState(false)
+    console.log({isSubnavOpen})
 
     const handleScroll = useCallback(() => {
         const activeNavPosition = document
@@ -60,6 +90,7 @@ const App = () => {
     const handleClickNavItem = (e, item) => {
         e.preventDefault()
         setActiveNavItem(item.id)
+        setIsSubnavOpen(false)
         const element = document.getElementById(item.id)
         const navElement = document.getElementById('navbar')
         const newTop =
@@ -72,42 +103,25 @@ const App = () => {
     return (
         <main className="">
             <div
-                id="navbar"
-                className="menu flex justify-between items-center p-4 fixed top-0 bg-white/95 z-10 rounded-md m-2 w-[-webkit-fill-available] shadow"
+                className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow"
             >
+                <div className="flex justify-between items-center p-4 m-2" id="navbar">
                 <h1 className="font-bold tracking-tight">LAURA PHAM</h1>
-                <div className="block md:hidden">
+                <div className="block md:hidden" onClick={() => setIsSubnavOpen(!isSubnavOpen)}>
                     <button>
                         <FaBars />
                     </button>
                 </div>
-                <div className="gap-4 items-center hidden md:flex">
-                    {navItems.map((item) => {
-                        const isActiveNav = activeNavItem === item.id
-                        return (
-                            <span
-                                class={
-                                    isActiveNav
-                                        ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-200 relative inline-block`
-                                        : ''
-                                }
-                            >
-                                <button
-                                    key={item.id}
-                                    onClick={(e) => handleClickNavItem(e, item)}
-                                    className={
-                                        isActiveNav ? `relative` : ''
-                                    }
-                                >
-                                    {item.title}
-                                </button>
-                            </span>
-                        )
-                    })}
+                <div className='gap-4 items-center md:flex hidden'>
+                    {renderedNavItems(navItems, activeNavItem, handleClickNavItem)}
+                </div>
+                </div>
+                <div className={isSubnavOpen ? 'flex gap-4 items-center flex-col p-4 border-t h-inherit transition ease-in-out duration-300 md:hidden' : 'hidden'}>
+                    {renderedNavItems(navItems, activeNavItem, handleClickNavItem)}
                 </div>
             </div>
             <div id="home" className="section">
-                <div className="hero flex h-[85vh] items-center justify-around bg-sky-200 p-8">
+                <div className="hero flex h-[85vh] items-center justify-around bg-sky-100 p-8">
                     <div className="hero-text flex flex-col gap-4">
                         <span className="text-xl font-light">
                             <h1 className="">Hi, I'm Laura 👋</h1>
