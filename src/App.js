@@ -2,23 +2,21 @@ import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import { FaBars, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import Projects from './components/Projects'
+import About from './components/About'
 
 const navItems = [
     { title: 'Home', id: 'home' },
     {
-        title: 'About',
-        id: 'about',
-        contents: (
-            <p>Bringing keen attention to user experience to engineering</p>
-        ),
-    },
-    {
         title: 'Projects',
         id: 'projects',
-        className: 'bg-sky-100',
         contents: <Projects />,
     },
-    { title: 'Recommendations', id: 'recommendations'},
+    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100',},
+    {
+        title: 'About',
+        id: 'about',
+        contents: <About/>,
+    },
     { title: 'Contact', id: 'contact', className: 'bg-sky-100' },
 ]
 
@@ -146,7 +144,7 @@ const App = () => {
                         <div
                             key={item.id}
                             id={item.id}
-                            className={`min-h-[85vh] p-4 ${item.className} section`}
+                            className={`min-h-[85vh] p-8 ${item.className} section`}
                         >
                             <h1 className="text-center font-light text-xl">
                                 {item.title}
