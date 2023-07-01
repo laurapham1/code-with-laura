@@ -3,6 +3,7 @@ import './App.css'
 import { FaBars, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import Projects from './components/Projects'
 import About from './components/About'
+import Recommendations from './components/Recommendations'
 
 const navItems = [
     { title: 'Home', id: 'home' },
@@ -11,7 +12,7 @@ const navItems = [
         id: 'projects',
         contents: <Projects />,
     },
-    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100',},
+    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100 h-fit min-h-fit', contents: <Recommendations/>},
     {
         title: 'About',
         id: 'about',
