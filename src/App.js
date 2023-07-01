@@ -34,7 +34,8 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
                 >
                     <button
                         key={item.id}
-                        onClick={(e) => handleClickNavItem(e, item)}
+                        data-id={item.id}
+                        onClick={(e) => handleClickNavItem(e)}
                         className={
                             isActiveNav ? `relative` : ''
                         }
@@ -85,11 +86,11 @@ const App = () => {
         }
     }, [handleScroll])
 
-    const handleClickNavItem = (e, item) => {
+    const handleClickNavItem = (e) => {
         e.preventDefault()
-        setActiveNavItem(item.id)
+        setActiveNavItem(e.target.dataset.id)
         setIsSubnavOpen(false)
-        const element = document.getElementById(item.id)
+        const element = document.getElementById(e.target.dataset.id)
         const navElement = document.getElementById('navbar')
         const newTop =
             window.scrollY +
@@ -104,7 +105,7 @@ const App = () => {
                 className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow" onMouseLeave={() => setIsSubnavOpen(false)}
             >
                 <div className="flex justify-between items-center p-4 m-2" id="navbar">
-                <h1 className="font-bold tracking-tight">LAURA PHAM</h1>
+                <button onClick={(e) => handleClickNavItem(e)} data-id="home"><h1 data-id="home" className="font-bold tracking-tight">LAURA PHAM</h1></button>
                 <div className="block md:hidden" onMouseEnter={() => setIsSubnavOpen(true)} onClick={() => setIsSubnavOpen(!isSubnavOpen)} >
                     <button>
                         <FaBars />
