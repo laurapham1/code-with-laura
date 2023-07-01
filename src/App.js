@@ -28,7 +28,7 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
                 <span
                     class={
                         isActiveNav
-                            ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-100 relative inline-block`
+                            ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-100 relative`
                             : ''
                     }
                 >
@@ -114,7 +114,7 @@ const App = () => {
                     {renderedNavItems(navItems, activeNavItem, handleClickNavItem)}
                 </div>
                 </div>
-                <div className={isSubnavOpen ? 'flex gap-4 items-center flex-col p-4 border-t h-inherit transition ease-in-out duration-300 md:hidden' : 'hidden'}>
+                <div className={`transition-all ease-in-out duration-300 overflow-hidden box-border flex gap-4 items-center flex-col border-t md:hidden justify-center ${isSubnavOpen ? ' h-[220px]' : 'h-0'}`}>
                     {renderedNavItems(navItems, activeNavItem, handleClickNavItem)}
                 </div>
             </div>
