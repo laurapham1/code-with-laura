@@ -16,6 +16,7 @@ const navItems = [
     {
         title: 'About',
         id: 'about',
+        className: 'h-fit min-h-fit',
         contents: <About/>,
     },
     { title: 'Contact', id: 'contact', className: 'bg-sky-100' },
