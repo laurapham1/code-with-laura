@@ -42,8 +42,8 @@ const Projects = () => {
     return (
         <>
             {/* <h1 className="text-center">Projects</h1> */}
-            <main className="p-8 h-full">
-                <div className="project-cards grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 h-full">
+            <main className="px-0 py-8 md:px-8 h-full">
+                <div className="project-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-full">
                     {projects.map((project, index) => {
                         return (
                             <>
@@ -59,8 +59,7 @@ const Projects = () => {
                                             {project.title}
                                         </h1>
                                         <p>{project.description}</p>
-                                        <div className="gap-2 flex">
-
+                                        <div className="gap-2 flex flex-wrap">
                                         {project.skills.map((skill)=> {
                                             return <span className="bg-gray-200 p-2 py-1 text-sm shadow rounded h-fit">{skill}</span>
                                         })}
