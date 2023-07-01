@@ -1,0 +1,18 @@
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.02em; /* Adjust as needed */
+    animation: typewriter 1.5s steps(15) 1s 1 normal both,
+    blinkTextCursor 750ms steps(15) infinite normal;
+  }
+  
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: 100%}
+  }
+  @keyframes blinkTextCursor{
+    from, to { border-color: transparent }
+  50% { border-color: orange }
+  }
