@@ -101,11 +101,11 @@ const App = () => {
     return (
         <main className="">
             <div
-                className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow"
+                className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow" onMouseLeave={() => setIsSubnavOpen(false)}
             >
                 <div className="flex justify-between items-center p-4 m-2" id="navbar">
                 <h1 className="font-bold tracking-tight">LAURA PHAM</h1>
-                <div className="block md:hidden" onClick={() => setIsSubnavOpen(!isSubnavOpen)}>
+                <div className="block md:hidden" onMouseEnter={() => setIsSubnavOpen(true)} >
                     <button>
                         <FaBars />
                     </button>
