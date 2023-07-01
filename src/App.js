@@ -105,7 +105,7 @@ const App = () => {
             >
                 <div className="flex justify-between items-center p-4 m-2" id="navbar">
                 <h1 className="font-bold tracking-tight">LAURA PHAM</h1>
-                <div className="block md:hidden" onMouseEnter={() => setIsSubnavOpen(true)} >
+                <div className="block md:hidden" onMouseEnter={() => setIsSubnavOpen(true)} onClick={() => setIsSubnavOpen(!isSubnavOpen)} >
                     <button>
                         <FaBars />
                     </button>
