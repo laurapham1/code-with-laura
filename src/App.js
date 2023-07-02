@@ -13,7 +13,7 @@ const navItems = [
         className: 'h-fit min-h-fit',
         contents: <Projects />,
     },
-    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100 min-h-[50vh] h-[50vh]', contents: <Recommendations/>},
+    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100 min-h-fit h-fit', contents: <Recommendations/>},
     {
         title: 'About',
         id: 'about',

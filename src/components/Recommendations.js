@@ -54,7 +54,7 @@ const Recommendations = () => {
         setActiveRecommendation(nextRecommendation)
     }
     return (
-       <div className="px-10 carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full">
+       <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full">
 
         {recommendations.map((recommendation, index)=> {
                                             return (
