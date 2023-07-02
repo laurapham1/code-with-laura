@@ -13,14 +13,14 @@ const navItems = [
         className: 'h-fit min-h-fit',
         contents: <Projects />,
     },
-    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100 min-h-fit h-fit', contents: <Recommendations/>},
+    { title: 'Recommendations', id: 'recommendations', className: 'bg-rose-800 text-white min-h-fit h-fit', contents: <Recommendations/>},
     {
         title: 'About',
         id: 'about',
         className: 'h-fit min-h-fit',
         contents: <About/>,
     },
-    { title: 'Contact', id: 'contact', className: 'bg-sky-100 min-h-[85vh]' },
+    { title: 'Contact', id: 'contact', className: 'bg-rose-800 text-white min-h-[85vh]' },
 ]
 
 const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
@@ -31,7 +31,7 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
                 <span
                     class={
                         isActiveNav
-                            ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-100 relative`
+                            ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-rose-800 text-white relative`
                             : ''
                     }
                 >
@@ -39,9 +39,8 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
                         key={item.id}
                         data-id={item.id}
                         onClick={(e) => handleClickNavItem(e)}
-                        className={
-                            isActiveNav ? `relative` : ''
-                        }
+                        className={`${isActiveNav ? `relative` : ''}`
+}
                     >
                         {item.title}
                     </button>
@@ -105,7 +104,7 @@ const App = () => {
     return (
         <main className="">
             <div
-                className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow" onMouseLeave={() => setIsSubnavOpen(false)}
+                className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow m-2" onMouseLeave={() => setIsSubnavOpen(false)}
             >
                 <div className="flex justify-between items-center p-4 m-2" id="navbar">
                 <button onClick={(e) => handleClickNavItem(e)} data-id="home"><h1 data-id="home" className="font-bold tracking-tight">LAURA PHAM</h1></button>
@@ -123,7 +122,7 @@ const App = () => {
                 </div>
             </div>
             <div id="home" className="section">
-                <div className="hero flex h-[85vh] items-center justify-around bg-sky-100 p-8">
+                <div className="hero flex h-[85vh] items-center justify-around bg-rose-800 text-white p-8">
                     <div className="hero-text flex flex-col gap-4">
                         <div className="text-2xl font-light w-fit">
                             <div className="typewriter ">
@@ -154,7 +153,7 @@ const App = () => {
                             id={item.id}
                             className={`p-8 md:px-16 section ${item.className}`}
                         >
-                            <h1 className="text-center font-light text-xl mb-4">
+                            <h1 className="text-center font-bold text-xl mb-10">
                                 {item.title}
                             </h1>
                             {item.contents}
