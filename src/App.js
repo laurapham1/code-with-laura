@@ -10,16 +10,17 @@ const navItems = [
     {
         title: 'Projects',
         id: 'projects',
+        className: 'h-fit min-h-fit',
         contents: <Projects />,
     },
-    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100 h-fit min-h-fit', contents: <Recommendations/>},
+    { title: 'Recommendations', id: 'recommendations', className: 'bg-sky-100 min-h-[50vh] h-[50vh]', contents: <Recommendations/>},
     {
         title: 'About',
         id: 'about',
         className: 'h-fit min-h-fit',
         contents: <About/>,
     },
-    { title: 'Contact', id: 'contact', className: 'bg-sky-100' },
+    { title: 'Contact', id: 'contact', className: 'bg-sky-100 min-h-[85vh]' },
 ]
 
 const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
@@ -151,9 +152,9 @@ const App = () => {
                         <div
                             key={item.id}
                             id={item.id}
-                            className={`min-h-[85vh] p-8 ${item.className} section`}
+                            className={`p-8 md:px-16 section ${item.className}`}
                         >
-                            <h1 className="text-center font-light text-xl">
+                            <h1 className="text-center font-light text-xl mb-4">
                                 {item.title}
                             </h1>
                             {item.contents}

@@ -9,7 +9,7 @@ const recommendations = [{
 {
     owner: 'Wayne Lincoln',
     ownerRole: 'Senior Software Engineer at Linktree',
-    content: 'Having a multi-career path range of experiences in her professional background has resulted in a team member who is friendly, approachable and empathetic, all the while being able to marry that with focus to the task at hand, a knack for complex problem solving and being able to take charge of projects.',
+    content: 'A team member who is friendly, approachable and empathetic, with focus to the task at hand, a knack for complex problem solving and being able to take charge of projects.',
 },
 {
     owner: 'Smita Suravajjala',
@@ -33,7 +33,7 @@ const Recommendations = () => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             handleClickCarouselRight()
-        }, 5000)
+        }, 10000)
         return () => clearTimeout(timeout)
     })
 
@@ -54,7 +54,7 @@ const Recommendations = () => {
         setActiveRecommendation(nextRecommendation)
     }
     return (
-       <div className="my-4 px-10 carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit">
+       <div className="px-10 carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full">
 
         {recommendations.map((recommendation, index)=> {
                                             return (
@@ -72,10 +72,9 @@ const Recommendations = () => {
                                                     </figcaption>
                                                     </figure>)
                                         })}
-    <FaChevronLeft onClick={() => handleClickCarouselLeft()} className="absolute top-[50%] left-0 cursor-pointer hover:text-gray-500"/>
-    <FaChevronRight onClick={() => handleClickCarouselRight()} className="absolute top-[50%] right-0 cursor-pointer hover:text-gray-500"/>
+        <FaChevronLeft onClick={() => handleClickCarouselLeft()} className="absolute top-[50%] left-0 cursor-pointer hover:text-gray-500"/>
+        <FaChevronRight onClick={() => handleClickCarouselRight()} className="absolute top-[50%] right-0 cursor-pointer hover:text-gray-500"/>
        </div>
-           //    Carousel Controls
     )
 }
 
