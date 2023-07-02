@@ -40,9 +40,6 @@ const Projects = () => {
         console.log(e)
     }
     return (
-        <>
-            {/* <h1 className="text-center">Projects</h1> */}
-            <main className="px-0 py-8 md:px-8 h-full">
                 <div className="project-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-full">
                     {projects.map((project, index) => {
                         return (
@@ -71,8 +68,6 @@ const Projects = () => {
                         )
                     })}
                 </div>
-            </main>
-        </>
     )
 }
 
