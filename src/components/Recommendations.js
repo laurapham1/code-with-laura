@@ -61,13 +61,13 @@ const Recommendations = () => {
                                                 <figure class={`relative float-left w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none text-center flex flex-col gap-4 ${activeRecommendation === index ? '' : 'hidden'}`}>
                                                     <FaQuoteLeft className="m-auto"/>
                                                     <blockquote cite={recommendationsLink}>
-                                                        <p class="text-md md:text-xl italic font-medium text-gray-900 dark:text-white">{recommendation.content}</p>
+                                                        <p class="text-md md:text-xl italic font-medium text-gray-900">{recommendation.content}</p>
                                                     </blockquote>
                                                 <figcaption class="flex gap-2 md:gap-0 items-center justify-center mt-6 space-x-3 flex-col md:flex-row">
                                                     <img class="w-6 h-6 rounded-full" src={`https://eu.ui-avatars.com/api/?name=${recommendation.owner}&size=500&background=random`} alt="profile picture"/>
                                                     <div class="flex flex-col items-center md:divide-gap-2 md:flex-row md:divide-x-2 divide-gray-500 dark:divide-gray-700 ">
-                                                        <p class="md:pr-3 font-medium text-gray-900 dark:text-white">{recommendation.owner}</p>
-                                                        <p class="md:pl-3 text-sm text-gray-500 dark:text-gray-400">{recommendation.ownerRole}</p>
+                                                        <p class="md:pr-3 font-medium text-gray-900">{recommendation.owner}</p>
+                                                        <p class="md:pl-3 text-sm text-gray-500">{recommendation.ownerRole}</p>
                                                     </div>
                                                     </figcaption>
                                                     </figure>)
