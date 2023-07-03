@@ -48,7 +48,7 @@ const About = () => {
                     </div>
                     <div>
                         <h2 className="font-bold">Technical skills: </h2>
-                        <div className="gap-4 flex overflow-auto py-4 flex-wrap">
+                        <div className="gap-2 flex overflow-auto py-4 flex-wrap">
                             {technicalSkills.map((skill) => {
                                 return (
                                     <div className="bg-gray-200 p-2 py-1 text-sm shadow rounded w-fit">
@@ -60,7 +60,7 @@ const About = () => {
                     </div>
                     <div>
                         <h2 className="font-bold">Soft skills: </h2>
-                        <div className="gap-4 flex overflow-auto py-4 flex-wrap">
+                        <div className="gap-2 flex overflow-auto py-4 flex-wrap">
                             {softSkills.map((skill) => {
                                 return (
                                     <div className="bg-gray-200 p-2 py-1 text-sm shadow rounded w-fit">
