@@ -3,57 +3,58 @@ import './App.css'
 import { FaBars, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import Projects from './components/Projects'
 import About from './components/About'
+import Home from './components/Home'
 import Recommendations from './components/Recommendations'
 
 const navItems = [
-    { title: 'Home', id: 'home' },
+    { title: 'Home', id: 'home', contents: <Home /> },
     {
         title: 'Projects',
         id: 'projects',
-        className: 'h-fit min-h-fit',
+        className: 'h-fit min-h-fit p-8 md:px-16',
         contents: <Projects />,
     },
-    { title: 'Recommendations', id: 'recommendations', className: 'bg-rose-800 text-white min-h-fit h-fit', contents: <Recommendations/>},
+    {
+        title: 'Recommendations',
+        id: 'recommendations',
+        className: 'bg-rose-800 text-white min-h-fit h-fit p-8 md:px-16',
+        contents: <Recommendations />,
+    },
     {
         title: 'About',
         id: 'about',
-        className: 'h-fit min-h-fit',
-        contents: <About/>,
+        className: 'h-fit min-h-fit p-8 md:px-16',
+        contents: <About />,
     },
-    { title: 'Contact', id: 'contact', className: 'bg-rose-800 text-white min-h-[85vh]' },
+    {
+        title: 'Contact',
+        id: 'contact',
+        className: 'bg-rose-800 text-white min-h-[85vh]',
+    },
 ]
 
-const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) =>{
-    return (
-        navItems.map((item) => {
-            const isActiveNav = activeNavItem === item.id
-            return (
-                <span
-                    class={
-                        isActiveNav
-                            ? `before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-rose-800 text-white relative`
-                            : ''
-                    }
-                >
-                    <button
-                        key={item.id}
-                        data-id={item.id}
-                        onClick={(e) => handleClickNavItem(e)}
-                        className={`${isActiveNav ? `relative` : ''}`
-}
-                    >
-                        {item.title}
-                    </button>
-                </span>
-            )
-        })
-    )
+const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
+    return navItems.map((item) => {
+        const isActiveNav = activeNavItem === item.id
+        return (
+            <button
+                key={item.id}
+                data-id={item.id}
+                onClick={(e) => handleClickNavItem(e)}
+                className={`p-2 py-4 ${
+                    isActiveNav ? `relative bg-rose-800 text-white` : ''
+                }`}
+            >
+                {item.title}
+            </button>
+        )
+    })
 }
 
 const App = () => {
     const [activeNavItem, setActiveNavItem] = useState('home')
     const [isSubnavOpen, setIsSubnavOpen] = useState(false)
-    console.log({isSubnavOpen})
+    console.log({ isSubnavOpen })
 
     const handleScroll = useCallback(() => {
         const activeNavPosition = document
@@ -104,62 +105,59 @@ const App = () => {
     return (
         <main className="">
             <div
-                className="menu fixed top-0 bg-white/95 z-10 rounded-md w-[-webkit-fill-available] shadow m-2" onMouseLeave={() => setIsSubnavOpen(false)}
+                className="menu fixed top-0 bg-white/95 z-10 rounded w-[-webkit-fill-available] shadow m-2 px-4"
+                onMouseLeave={() => setIsSubnavOpen(false)}
             >
-                <div className="flex justify-between items-center p-4 m-2" id="navbar">
-                <button onClick={(e) => handleClickNavItem(e)} data-id="home"><h1 data-id="home" className="font-bold tracking-tight">LAURA PHAM</h1></button>
-                <div className="block md:hidden" onMouseEnter={() => setIsSubnavOpen(true)} onClick={() => setIsSubnavOpen(!isSubnavOpen)} >
-                    <button>
-                        <FaBars />
+                <div className="flex justify-between items-center" id="navbar">
+                    <button
+                        onClick={(e) => handleClickNavItem(e)}
+                        data-id="home"
+                    >
+                        <h1 data-id="home" className="font-bold tracking-tight">
+                            LAURA PHAM
+                        </h1>
                     </button>
-                </div>
-                <div className='gap-4 items-center md:flex hidden'>
-                    {renderedNavItems(navItems, activeNavItem, handleClickNavItem)}
-                </div>
-                </div>
-                <div className={`transition-all ease-in-out duration-300 overflow-hidden box-border flex gap-4 items-center flex-col border-t md:hidden justify-center ${isSubnavOpen ? ' h-[220px]' : 'h-0'}`}>
-                    {renderedNavItems(navItems, activeNavItem, handleClickNavItem)}
-                </div>
-            </div>
-            <div id="home" className="section">
-                <div className="hero flex h-[85vh] items-center justify-around bg-rose-800 text-white p-8">
-                    <div className="hero-text flex flex-col gap-4">
-                        <div className="text-2xl font-light w-fit">
-                            <div className="typewriter ">
-                            <h1 className="">Hi, I'm Laura 👋</h1>
-                            </div>
-                        </div>
-                        <div className="text-2xl font-light w-fit">
-                            <h2 className="">Educator turned Software engineer</h2>
-                        </div>
-                        <div className="social-icons flex flex-row gap-2">
-                            <button className="hover:scale-125 ease-in-out duration-300">
-                                <FaInstagram />
-                            </button>
-                            <button className="hover:scale-125 ease-in-out duration-300">
-                                <FaLinkedin />
-                            </button>
-                        </div>
+                    <div
+                        className="block md:hidden"
+                        onMouseEnter={() => setIsSubnavOpen(true)}
+                        onClick={() => setIsSubnavOpen(!isSubnavOpen)}
+                    >
+                        <button>
+                            <FaBars />
+                        </button>
                     </div>
-                    <div className="hero-image h-inherit"></div>
+                    <div className=" items-center md:flex hidden">
+                        {renderedNavItems(
+                            navItems,
+                            activeNavItem,
+                            handleClickNavItem
+                        )}
+                    </div>
+                </div>
+                <div
+                    className={`transition-all ease-in-out duration-300 overflow-hidden box-border flex' items-center flex-col border-t md:hidden justify-center ${
+                        isSubnavOpen ? ' h-[220px]' : 'h-0'
+                    }`}
+                >
+                    {renderedNavItems(
+                        navItems,
+                        activeNavItem,
+                        handleClickNavItem
+                    )}
                 </div>
             </div>
-            {navItems
-                .filter((item) => item.id !== 'home')
-                .map((item) => {
-                    return (
-                        <div
-                            key={item.id}
-                            id={item.id}
-                            className={`p-8 md:px-16 section ${item.className}`}
-                        >
-                            <h1 className="text-center font-bold text-xl mb-10">
-                                {item.title}
-                            </h1>
-                            {item.contents}
-                        </div>
-                    )
-                })}
+
+            {navItems.map((item) => {
+                return (
+                    <div
+                        key={item.id}
+                        id={item.id}
+                        className={`section flex flex-col gap-6 ${item.className}`}
+                    >
+                        {item.contents}
+                    </div>
+                )
+            })}
         </main>
     )
 }
