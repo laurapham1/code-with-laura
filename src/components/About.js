@@ -3,12 +3,14 @@ import image from '../assets/images/profile-photo.png'
 const technicalSkills = [
     'javascript',
     'react',
-    'elixir',
     'node',
+    'php',
     'ruby',
     'rails',
-    'php',
+    'elixir',
     'graphql',
+    'aws',
+    'azure'
 ]
 const softSkills = [
     'communication',
@@ -20,12 +22,12 @@ const About = () => {
     return (
         <>
             <h1 className="text-center font-bold text-xl">About</h1>
-            <div className="flex gap-4">
-                <div className="flex flex-col gap-3">
+            <div className="flex gap-4 flex-col lg:flex-row items-center">
+                <div className="flex flex-col gap-8">
                     <div>
                         <p className="flex-1">
-                            Hello world! I'm Laura, a driven and meticulous Full
-                            Stack Engineer.
+                            Hello world! I'm Laura, a driven and meticulous <strong>Full
+                            Stack/Front-end Engineer</strong>.
                             <br />
                             <br /> With a diverse skill set and experiences at
                             esteemed organizations, including an Australian
@@ -34,14 +36,14 @@ const About = () => {
                             bring a wealth of expertise to the table.
                             <br />
                             <br />
-                            My forte lies in teamwork, effective communication,
-                            and unwavering attention to detail, ensuring
+                            My forte lies in <strong>teamwork</strong>, <strong>effective communication</strong>,
+                            and unwavering <strong>attention to detail</strong>, ensuring
                             high-quality project delivery. As a quick learner, I
                             continuously adapt to new challenges.
                             <br />
                             <br />
                             If you're seeking a dedicated professional who
-                            excels in collaboration and possesses a keen eye for
+                            excels in <strong>collaboration</strong> and possesses a keen eye for
                             detail, let's connect and create exceptional
                             projects together.
                         </p>
@@ -51,19 +53,17 @@ const About = () => {
                         <div className="gap-2 flex overflow-auto py-4 flex-wrap">
                             {technicalSkills.map((skill) => {
                                 return (
-                                    <div className="bg-gray-200 p-2 py-1 text-sm shadow rounded w-fit">
+                                    <div className="bg-gray-200 p-2 py-1 text-sm shadow rounded w-fit capitalize">
                                         {skill}
                                     </div>
                                 )
                             })}
                         </div>
-                    </div>
-                    <div>
                         <h2 className="font-bold">Soft skills: </h2>
                         <div className="gap-2 flex overflow-auto py-4 flex-wrap">
                             {softSkills.map((skill) => {
                                 return (
-                                    <div className="bg-gray-200 p-2 py-1 text-sm shadow rounded w-fit">
+                                    <div className="bg-gray-200 p-2 py-1 text-sm shadow rounded w-fit capitalize">
                                         {skill}
                                     </div>
                                 )
