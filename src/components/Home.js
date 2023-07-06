@@ -1,4 +1,4 @@
-import { FaBars, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaTree, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const Home = () => {
     return (
@@ -14,10 +14,21 @@ const Home = () => {
                 </div>
                 <div className="social-icons flex flex-row gap-2">
                     <button className="hover:scale-125 ease-in-out duration-300">
+                        <a href="https://www.instagram.com/lauracodes_/" target="_blank">
                         <FaInstagram />
+                        </a>
                     </button>
                     <button className="hover:scale-125 ease-in-out duration-300">
+                    <a href="https://www.linkedin.com/in/lauranpham" target="_blank">
+
                         <FaLinkedin />
+                        </a>
+
+                    </button>
+                    <button className="hover:scale-125 ease-in-out duration-300">
+                        <a href="https://www.linktr.ee/codewithlaura" target="_blank">
+                        <FaTree />
+                        </a>
                     </button>
                 </div>
             </div>
