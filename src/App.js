@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
-import { FaBars, FaInstagram, FaLinkedin } from 'react-icons/fa'
-import Projects from './components/Projects'
-import About from './components/About'
+import { FaBars } from 'react-icons/fa'
 import Home from './components/Home'
+import Projects from './components/Projects'
 import Recommendations from './components/Recommendations'
+import About from './components/About'
+import Contact from './components/Contact'
 
 const navItems = [
     { title: 'Home', id: 'home', contents: <Home /> },
@@ -29,7 +30,8 @@ const navItems = [
     {
         title: 'Contact',
         id: 'contact',
-        className: 'bg-rose-800 text-white min-h-[85vh]',
+        className: 'bg-rose-800 min-h-fit h-fit p-8 md:px-16',
+        contents: <Contact/>
     },
 ]
 
@@ -41,8 +43,8 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
                 key={item.id}
                 data-id={item.id}
                 onClick={(e) => handleClickNavItem(e)}
-                className={`p-2 py-4 ${
-                    isActiveNav ? `relative bg-rose-800 text-white` : ''
+                className={`p-1 md:p-2 md:py-4 w-full ${
+                    isActiveNav ? `relative bg-rose-700 text-white` : ''
                 }`}
             >
                 {item.title}
@@ -105,10 +107,10 @@ const App = () => {
     return (
         <main className="">
             <div
-                className="menu fixed top-0 bg-white/95 z-10 rounded w-[-webkit-fill-available] shadow m-2 px-4"
+                className="menu fixed top-0 bg-white/95 z-10 rounded w-[-webkit-fill-available] shadow m-2 p-4 pb-0 md:py-0"
                 onMouseLeave={() => setIsSubnavOpen(false)}
             >
-                <div className="flex justify-between items-center" id="navbar">
+                <div className="flex justify-between items-center pb-4 md:pb-0" id="navbar">
                     <button
                         onClick={(e) => handleClickNavItem(e)}
                         data-id="home"
@@ -135,8 +137,8 @@ const App = () => {
                     </div>
                 </div>
                 <div
-                    className={`transition-all ease-in-out duration-300 overflow-hidden box-border flex' items-center flex-col border-t md:hidden justify-center ${
-                        isSubnavOpen ? ' h-[220px]' : 'h-0'
+                    className={`transition-all ease-in-out duration-300 overflow-hidden box-border border-t flex items-center flex-col md:hidden justify-center w-full ${
+                        isSubnavOpen ? ' h-[200px]' : 'h-0'
                     }`}
                 >
                     {renderedNavItems(
