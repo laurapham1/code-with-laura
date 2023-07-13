@@ -1,7 +1,7 @@
 import sammiImage from '../assets/images/sammi-mockup.png'
 import furrealImage from '../assets/images/furreal-mockup.png'
 import todolistImage from '../assets/images/todolist-mockup.png'
-import placeholderImage from '../assets/images/mrcocktail-mockup.png'
+import beeMindImage from '../assets/images/beemind-mockup.png'
 
 const projects = [
     {
@@ -26,11 +26,11 @@ const projects = [
         skills: ['react', 'javascript', 'node', 'graphql'],
     },
     {
-        title: 'Emotion Tracker',
-        description: 'An emotion tracker/diary mobile app',
-        image: placeholderImage,
+        title: 'Bee Mind',
+        description: 'An emotion diary and social connection app',
+        image: beeMindImage,
         link: '',
-        skills: ['react native', 'javascript', 'graphql', 'node'],
+        skills: ['react native', 'javascript', 'mobile app'],
     },
 ]
 
@@ -47,7 +47,7 @@ const Projects = () => {
                     return (
                         <>
                             <button
-                                className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition-color duration-300`}
+                                className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition-color duration-300 cursor-auto`}
                                 key={index}
                                 id={index}
                                 onClick={(e) => handleClickProject(e)}
