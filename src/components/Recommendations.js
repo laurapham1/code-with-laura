@@ -31,7 +31,7 @@ const recommendations = [
         owner: 'Ferdinand Vermersch',
         ownerRole: 'Deep-Tech VC at VSquared Ventures',
         content:
-            'She easily rose to the challenges we faced throughout the process of developing an app, and she proved to be a crucial member of the team through her enthusiasm and exemplary work ethic.',
+            'She easily purple to the challenges we faced throughout the process of developing an app, and she proved to be a crucial member of the team through her enthusiasm and exemplary work ethic.',
     },
 ]
 const Recommendations = () => {

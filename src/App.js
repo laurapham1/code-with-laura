@@ -18,7 +18,7 @@ const navItems = [
     {
         title: 'Recommendations',
         id: 'recommendations',
-        className: 'bg-rose-800 text-white min-h-fit h-fit p-8 md:px-16',
+        className: 'bg-purple-800 text-white min-h-fit h-fit p-8 md:px-16',
         contents: <Recommendations />,
     },
     {
@@ -44,7 +44,7 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
                 data-id={item.id}
                 onClick={(e) => handleClickNavItem(e)}
                 className={`p-1 md:p-2 md:py-4 w-full ${
-                    isActiveNav ? `relative bg-rose-700/75 text-white rounded md:rounded-none` : ''
+                    isActiveNav ? `relative bg-purple-700/75 text-white rounded md:rounded-none` : ''
                 }`}
             >
                 {item.title}

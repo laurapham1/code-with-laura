@@ -2,7 +2,7 @@ import { FaTree, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const Home = () => {
     return (
-        <div className="hero flex h-[85vh] items-center justify-around bg-rose-800 text-white p-8">
+        <div className="hero flex h-[85vh] items-center justify-around bg-purple-800 text-white p-8">
             <div className="hero-text flex flex-col gap-4">
                 <div className="text-3xl md:text-5xl font-bold w-fit">
                     <div className="typewriter ">
