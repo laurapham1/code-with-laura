@@ -30,7 +30,7 @@ const navItems = [
     {
         title: 'Contact',
         id: 'contact',
-        className: 'bg-rose-800 min-h-fit h-fit p-8 md:px-16',
+        className: 'bg-gray-100 min-h-fit h-fit p-8 md:px-16',
         contents: <Contact/>
     },
 ]
@@ -44,7 +44,7 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
                 data-id={item.id}
                 onClick={(e) => handleClickNavItem(e)}
                 className={`p-1 md:p-2 md:py-4 w-full ${
-                    isActiveNav ? `relative bg-rose-700 text-white` : ''
+                    isActiveNav ? `relative bg-rose-700/75 text-white rounded md:rounded-none` : ''
                 }`}
             >
                 {item.title}
@@ -115,7 +115,7 @@ const App = () => {
                         onClick={(e) => handleClickNavItem(e)}
                         data-id="home"
                     >
-                        <h1 data-id="home" className="font-bold tracking-tight">
+                        <h1 data-id="home" className="font-bold tracking-tight text-xl hover:underline transition duration-300">
                             LAURA PHAM
                         </h1>
                     </button>
