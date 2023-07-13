@@ -137,8 +137,8 @@ const App = () => {
                     </div>
                 </div>
                 <div
-                    className={`transition-all ease-in-out duration-300 overflow-hidden box-border border-t flex items-center flex-col md:hidden justify-center w-full ${
-                        isSubnavOpen ? ' h-[200px]' : 'h-0'
+                    className={`transition-all ease-in-out duration-300 overflow-hidden box-border flex items-center flex-col md:hidden justify-center w-full ${
+                        isSubnavOpen ? ' h-[200px] border-t' : 'h-0'
                     }`}
                 >
                     {renderedNavItems(
