@@ -40,9 +40,9 @@ const Projects = () => {
     }
     return (
         <>
-            <h1 className="text-center font-bold text-xl">Projects</h1>
+            <h1 className="text-center font-light text-2xl">Projects</h1>
 
-            <div className="project-cards grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            <div className="project-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-full">
                 {projects.map((project, index) => {
                     return (
                         <>

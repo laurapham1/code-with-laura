@@ -61,7 +61,7 @@ const Recommendations = () => {
     }
     return (
         <>
-            <h1 className="text-center font-bold text-xl">Recommendations</h1>
+            <h1 className="text-center font-light text-2xl">Recommendations</h1>
 
             <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full">
                 {recommendations.map((recommendation, index) => {
@@ -79,7 +79,7 @@ const Recommendations = () => {
                             </blockquote>
                             <figcaption class="flex gap-2 md:gap-0 items-center justify-center mt-6 space-x-3 flex-col md:flex-row">
                                 <img
-                                    class="w-6 h-6 rounded-full"
+                                    className="w-6 h-6 rounded-full"
                                     src={`https://eu.ui-avatars.com/api/?name=${recommendation.owner}&size=500&background=random`}
                                     alt="profile picture"
                                 />

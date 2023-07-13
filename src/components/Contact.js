@@ -12,11 +12,11 @@ const Contact = () => {
 
     return (
         <>
-            <h1 className="text-center font-bold text-lg text-white">
+            <h1 className="text-center font-light text-2xl">
                 Contact
             </h1>
             <div className="w-full md:w-[60vw] lg:w-[40vw] m-auto py-10">
-                <h2 className="text-4xl mb-6 text-white tracking-wide font-light">
+                <h2 className="text-4xl mb-6  tracking-wide font-light">
                     Love to hear from you,
                     <br />
                     Get in touch 👋
@@ -24,7 +24,7 @@ const Contact = () => {
                 <form className="flex flex-col gap-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="name" className="text-white">
+                            <label htmlFor="name" className="">
                                 Your name
                             </label>
                             <div class="relative">
@@ -37,12 +37,12 @@ const Contact = () => {
                                     name="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="rounded p-1 px-2 shadow text-gray-700 pl-10 w-full"
+                                    className="rounded p-1 px-2 border text-gray-700 pl-10 w-full"
                                 />
                             </div>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="email" className="text-white">
+                            <label htmlFor="email" className="">
                                 Your email
                             </label>
                             <div class="relative">
@@ -55,14 +55,14 @@ const Contact = () => {
                                     name="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="rounded p-1 px-2 shadow text-gray-700 pl-10 w-full"
+                                    className="rounded p-1 px-2 border text-gray-700 pl-10 w-full"
                                 />
                             </div>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 w-full gap-4">
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="message" className="text-white">
+                            <label htmlFor="message" className="">
                                 Message
                             </label>
                             <textarea
@@ -71,14 +71,14 @@ const Contact = () => {
                                 rows={5}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="rounded p-1 px-2 shadow text-gray-700"
+                                className="rounded p-1 px-2 border text-gray-700"
                             />
                         </div>
                     </div>
                     <div>
                         <button
                             type="submit"
-                            className="text-white bg-gray-700 hover:bg-gray-600 transition-background duration-300 shadow w-full rounded p-2"
+                            className=" bg-rose-800 hover:bg-rose-700 text-white transition-background duration-300 w-full rounded p-2"
                             onClick={handleSubmit}
                         >
                             Submit

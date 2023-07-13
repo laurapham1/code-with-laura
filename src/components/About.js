@@ -21,7 +21,7 @@ const softSkills = [
 const About = () => {
     return (
         <>
-            <h1 className="text-center font-bold text-xl">About</h1>
+            <h1 className="text-center font-light text-2xl">About</h1>
             <div className="flex gap-4 flex-col lg:flex-row items-center">
                 <div className="flex flex-col gap-8">
                     <div>
