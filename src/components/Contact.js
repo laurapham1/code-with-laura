@@ -5,11 +5,6 @@ const Contact = () => {
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(name, email, message)
-    }
-
     return (
         <>
             <h1 className="text-center font-light text-2xl">
@@ -21,7 +16,7 @@ const Contact = () => {
                     <br />
                     Get in touch 👋
                 </h2>
-                <form className="flex flex-col gap-4">
+                <form className="flex flex-col gap-4" action="https://formspree.io/f/mleyezwb" method="POST">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="name" className="">
@@ -79,7 +74,6 @@ const Contact = () => {
                         <button
                             type="submit"
                             className={`bg-purple-600 hover:bg-purple-700 text-white transition-background duration-300 w-full rounded p-2`}
-                            onClick={handleSubmit}
                         >
                             Send Message
                         </button>
