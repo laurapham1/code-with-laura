@@ -1,7 +1,7 @@
 import sammiImage from '../assets/images/sammi-mockup.png'
 import furrealImage from '../assets/images/furreal-mockup.png'
 import todolistImage from '../assets/images/todolist-mockup.png'
-import beeMindImage from '../assets/images/beemind-mockup.png'
+import sammiMobileImage from '../assets/images/sammi-mobile-mockup.png'
 
 const projects = [
     {
@@ -26,9 +26,9 @@ const projects = [
         skills: ['react', 'javascript', 'node', 'graphql'],
     },
     {
-        title: 'Bee Mind',
+        title: 'Sammi - mobile app',
         description: 'An emotion diary and social connection app',
-        image: beeMindImage,
+        image: sammiMobileImage,
         link: '',
         skills: ['react native', 'javascript', 'mobile app'],
     },
@@ -42,7 +42,7 @@ const Projects = () => {
         <>
             <h1 className="text-center font-light text-2xl">Projects</h1>
 
-            <div className="project-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-full">
+            <div className="project-cards grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
                 {projects.map((project, index) => {
                     return (
                         <>
