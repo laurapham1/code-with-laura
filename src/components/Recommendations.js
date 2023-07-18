@@ -81,7 +81,7 @@ const Recommendations = () => {
                                 <img
                                     className="w-6 h-6 rounded-full"
                                     src={`https://eu.ui-avatars.com/api/?name=${recommendation.owner}&size=500&background=random`}
-                                    alt="profile picture"
+                                    alt="profile"
                                 />
                                 <div class="flex flex-col items-center md:divide-gap-2 md:flex-row md:divide-x-2 divide-gray-500 dark:divide-gray-700 ">
                                     <p class="md:pr-3 font-medium ">
