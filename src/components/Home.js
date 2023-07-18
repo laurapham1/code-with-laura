@@ -33,7 +33,7 @@ const Home = () => {
                     </button>
                 </div>
             </div>
-            <div className="hero-image h-inherit flex items-end h-full">
+            <div className="hero-image">
             <img
                                     src={profileImage}
                                     alt={`Profile-image`}
