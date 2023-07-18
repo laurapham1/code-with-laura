@@ -5,6 +5,7 @@ import sammiMobileImage from '../assets/images/sammi-mobile-mockup.png'
 
 const projects = [
     {
+        id: 1,
         title: 'Sammi',
         description: 'A mental health support app for teachers & students',
         image: sammiImage,
@@ -12,6 +13,7 @@ const projects = [
         skills: ['ruby', 'javascript', 'rails'],
     },
     {
+        id: 2,
         title: 'Furreal',
         description: 'A pet rental service app',
         image: furrealImage,
@@ -19,6 +21,7 @@ const projects = [
         skills: ['ruby', 'javascript', 'rails'],
     },
     {
+        id: 3,
         title: 'Fun to do list',
         description: 'An aesthetic daily to do list',
         image: todolistImage,
@@ -26,6 +29,7 @@ const projects = [
         skills: ['react', 'javascript', 'node', 'graphql'],
     },
     {
+        id: 4,
         title: 'Sammi - mobile app',
         description: 'An emotion diary and social connection app',
         image: sammiMobileImage,
@@ -37,6 +41,16 @@ const projects = [
 const Projects = () => {
     const handleClickProject = (e) => {
         console.log(e)
+        // open modal of project
+        const modalElement = document.getElementById(
+            `project-${e.currentTarget.id}-modal`
+        )
+        modalElement.classList.remove('hidden')
+    }
+
+    const closeProjectModal = (e) => {
+        // const modalElement = document.getElementById(`project-${e.currentTarget.id}-modal`)
+        e.currentTarget.classList.add('hidden')
     }
     return (
         <>
@@ -49,7 +63,7 @@ const Projects = () => {
                             <button
                                 className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition-color duration-300 cursor-auto`}
                                 key={index}
-                                id={index}
+                                id={project.id}
                                 onClick={(e) => handleClickProject(e)}
                             >
                                 <img
@@ -73,6 +87,17 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </button>
+                            <div
+                                className="project-modal hidden fixed w-full h-full bg-black/75 top-0 left-0 z-10 flex flex-col justify-center items-center"
+                                id={`project-${project.id}-modal`}
+                                onClick={(e) => closeProjectModal(e)}
+                            >
+                                    <img
+                                        src={project.image}
+                                        alt={`${project.title}-Mockup`}
+                                        className="bg-cyan-100 block relative md:max-w-[80vw] md:max-h-[80vh]"
+                                    />
+                            </div>
                         </>
                     )
                 })}
