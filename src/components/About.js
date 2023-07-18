@@ -1,4 +1,8 @@
-import image from '../assets/images/profile-photo.png'
+// import image from '../assets/images/profile-photo.png'
+import linktree from '../assets/images/linktree.png'
+import intelligencebank from '../assets/images/intelligencebank.png'
+import learnershape from '../assets/images/learnershape.jpg'
+import eaglesoftware from '../assets/images/eaglesoftware.png'
 
 const technicalSkills = [
     'javascript',
@@ -10,13 +14,35 @@ const technicalSkills = [
     'elixir',
     'graphql',
     'aws',
-    'azure'
+    'azure',
 ]
 const softSkills = [
     'communication',
     'problem solving',
     'teamwork',
     'attention to detail',
+]
+const workExperience = [
+    {
+        name: 'Linktree',
+        link: '',
+        image: linktree,
+    },
+    {
+        name: 'IntelligenceBank',
+        link: '',
+        image: intelligencebank,
+    },
+    {
+        name: 'Eagle Software',
+        link: '',
+        image: eaglesoftware,
+    },
+    {
+        name: 'Learnershape',
+        link: '',
+        image: learnershape,
+    },
 ]
 const About = () => {
     return (
@@ -26,8 +52,8 @@ const About = () => {
                 <div className="flex flex-col gap-8">
                     <div>
                         <p className="flex-1">
-                            Hello world! I'm Laura, a driven and meticulous <strong>Full
-                            Stack/Front-end Engineer</strong>.
+                            Hello world! I'm Laura, a driven and meticulous{' '}
+                            <strong>Full Stack/Front-end Engineer</strong>.
                             <br />
                             <br /> With a diverse skill set and experiences at
                             esteemed organizations, including an Australian
@@ -36,16 +62,17 @@ const About = () => {
                             bring a wealth of expertise to the table.
                             <br />
                             <br />
-                            My forte lies in <strong>teamwork</strong>, <strong>effective communication</strong>,
-                            and unwavering <strong>attention to detail</strong>, ensuring
-                            high-quality project delivery. As a quick learner, I
-                            continuously adapt to new challenges.
+                            My forte lies in <strong>teamwork</strong>,{' '}
+                            <strong>effective communication</strong>, and
+                            unwavering <strong>attention to detail</strong>,
+                            ensuring high-quality project delivery. As a quick
+                            learner, I continuously adapt to new challenges.
                             <br />
                             <br />
                             If you're seeking a dedicated professional who
-                            excels in <strong>collaboration</strong> and possesses a keen eye for
-                            detail, let's connect and create exceptional
-                            projects together.
+                            excels in <strong>collaboration</strong> and
+                            possesses a keen eye for detail, let's connect and
+                            create exceptional projects together.
                         </p>
                     </div>
                     <div>
@@ -69,13 +96,25 @@ const About = () => {
                                 )
                             })}
                         </div>
+                        <h2 className="font-bold">Work Experience: </h2>
+                        {/* <div className="gap-2 flex flex-row overflow-auto py-4 overflow-auto">
+                            {workExperience.map((company) => {
+                                return (
+                                    <img
+                                        src={company.image}
+                                        alt={company.name}
+                                        className="h-20 md:h-28 w-fit"
+                                    />
+                                )
+                            })}
+                        </div> */}
                     </div>
                 </div>
-                <img
+                {/* <img
                     src={image}
                     alt="Profile Photo"
                     className="rounded-lg shadow hidden md:block max-w-sm object-contain flex-0"
-                />
+                /> */}
             </div>
         </>
     )

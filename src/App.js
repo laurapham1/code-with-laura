@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Recommendations from './components/Recommendations'
 import About from './components/About'
 import Contact from './components/Contact'
+// import Footer from './components/Footer'
 
 const navItems = [
     { title: 'Home', id: 'home', contents: <Home /> },
@@ -186,6 +187,7 @@ const App = () => {
                     </div>
                 )
             })}
+            {/* <Footer/> */}
         </main>
     )
 }
