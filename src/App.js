@@ -31,7 +31,7 @@ const navItems = [
         title: 'Contact',
         id: 'contact',
         className: 'bg-gray-100 min-h-fit h-fit p-8 md:px-16',
-        contents: <Contact/>
+        contents: <Contact />,
     },
 ]
 
@@ -44,7 +44,9 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
                 data-id={item.id}
                 onClick={(e) => handleClickNavItem(e)}
                 className={`p-1 md:p-2 md:py-4 w-full ${
-                    isActiveNav ? `relative bg-purple-700/75 text-white rounded md:rounded-none` : ''
+                    isActiveNav
+                        ? `relative bg-purple-700/75 text-white rounded md:rounded-none`
+                        : ''
                 }`}
             >
                 {item.title}
@@ -57,7 +59,7 @@ const App = () => {
     const [activeNavItem, setActiveNavItem] = useState('home')
     const [isSubnavOpen, setIsSubnavOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
-    
+
     useEffect(() => {
         setIsLoading(false)
     }, [])
@@ -108,18 +110,38 @@ const App = () => {
         window.scrollTo({ top: newTop, behavior: 'smooth' })
     }
 
+    if (isLoading) {
+        return (
+            <div className="h-[100vh] w-[100vw] flex justify-center items-center">
+                <div
+                    class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-purple-700 border-r-gray-200 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                >
+                    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                        Loading...
+                    </span>
+                </div>
+            </div>
+        )
+    }
     return (
         <main className="">
             <div
                 className="menu fixed top-0 bg-white/95 z-10 rounded w-[-webkit-fill-available] shadow m-2 p-4 pb-0 md:py-0"
                 onMouseLeave={() => setIsSubnavOpen(false)}
             >
-                <div className="flex justify-between items-center pb-4 md:pb-0" id="navbar">
+                <div
+                    className="flex justify-between items-center pb-4 md:pb-0"
+                    id="navbar"
+                >
                     <button
                         onClick={(e) => handleClickNavItem(e)}
                         data-id="home"
                     >
-                        <h1 data-id="home" className="font-bold tracking-tight text-xl hover:underline transition duration-300">
+                        <h1
+                            data-id="home"
+                            className="font-bold tracking-tight text-xl hover:underline transition duration-300"
+                        >
                             LAURA PHAM
                         </h1>
                     </button>
