@@ -1,8 +1,8 @@
 // import image from '../assets/images/profile-photo.png'
-import linktree from '../assets/images/linktree.png'
-import intelligencebank from '../assets/images/intelligencebank.png'
-import learnershape from '../assets/images/learnershape.jpg'
-import eaglesoftware from '../assets/images/eaglesoftware.png'
+// import linktree from '../assets/images/linktree.png'
+// import intelligencebank from '../assets/images/intelligencebank.png'
+// import learnershape from '../assets/images/learnershape.jpg'
+// import eaglesoftware from '../assets/images/eaglesoftware.png'
 
 const technicalSkills = [
     'javascript',
@@ -22,28 +22,28 @@ const softSkills = [
     'teamwork',
     'attention to detail',
 ]
-const workExperience = [
-    {
-        name: 'Linktree',
-        link: '',
-        image: linktree,
-    },
-    {
-        name: 'IntelligenceBank',
-        link: '',
-        image: intelligencebank,
-    },
-    {
-        name: 'Eagle Software',
-        link: '',
-        image: eaglesoftware,
-    },
-    {
-        name: 'Learnershape',
-        link: '',
-        image: learnershape,
-    },
-]
+// const workExperience = [
+//     {
+//         name: 'Linktree',
+//         link: '',
+//         image: linktree,
+//     },
+//     {
+//         name: 'IntelligenceBank',
+//         link: '',
+//         image: intelligencebank,
+//     },
+//     {
+//         name: 'Eagle Software',
+//         link: '',
+//         image: eaglesoftware,
+//     },
+//     {
+//         name: 'Learnershape',
+//         link: '',
+//         image: learnershape,
+//     },
+// ]
 const About = () => {
     return (
         <>
@@ -96,7 +96,7 @@ const About = () => {
                                 )
                             })}
                         </div>
-                        <h2 className="font-bold">Work Experience: </h2>
+                        {/* <h2 className="font-bold">Work Experience: </h2> */}
                         {/* <div className="gap-2 flex flex-row overflow-auto py-4 overflow-auto">
                             {workExperience.map((company) => {
                                 return (
