@@ -55,10 +55,9 @@ const About = () => {
                             Hello world! I'm Laura, a driven and meticulous{' '}
                             <strong>Full Stack/Front-end Engineer</strong>.
                             <br />
-                            <br /> With a diverse skill set and experiences at
-                            esteemed organizations, including an Australian
-                            unicorn start-up, a London EdTech start-up, and
-                            within the Australian and UK education systems, I
+                            <br /> With a diverse skill set and experiences working in an Australian
+                            unicorn start-up, London EdTech start-up, and
+                         the Australian and UK education systems, I
                             bring a wealth of expertise to the table.
                             <br />
                             <br />
