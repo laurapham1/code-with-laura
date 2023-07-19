@@ -60,7 +60,7 @@ const Recommendations = () => {
         setActiveRecommendation(nextRecommendation)
     }
     return (
-        <>
+        <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6 bg-purple-800 text-white">
             <h1 className="text-center font-light text-2xl">Recommendations</h1>
 
             <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full">
@@ -104,7 +104,7 @@ const Recommendations = () => {
                     className="absolute top-[50%] right-0 cursor-pointer hover:text-gray-500 transition-color duration-300"
                 />
             </div>
-        </>
+        </div>
     )
 }
 

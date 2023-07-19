@@ -6,17 +6,19 @@ const Contact = () => {
     const [message, setMessage] = useState('')
 
     return (
-        <>
-            <h1 className="text-center font-light text-2xl">
-                Contact
-            </h1>
+        <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6 bg-gray-100">
+            <h1 className="text-center font-light text-2xl">Contact</h1>
             <div className="w-full md:w-[60vw] lg:w-[40vw] m-auto py-10">
                 <h2 className="text-4xl mb-6  tracking-wide font-light">
                     Love to hear from you,
                     <br />
                     Get in touch 👋
                 </h2>
-                <form className="flex flex-col gap-4" action="https://formspree.io/f/mleyezwb" method="POST">
+                <form
+                    className="flex flex-col gap-4"
+                    action="https://formspree.io/f/mleyezwb"
+                    method="POST"
+                >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="name" className="">
@@ -80,7 +82,7 @@ const Contact = () => {
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

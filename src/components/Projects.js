@@ -53,7 +53,7 @@ const Projects = () => {
         e.currentTarget.classList.add('hidden')
     }
     return (
-        <>
+        <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6">
             <h1 className="text-center font-light text-2xl">Projects</h1>
 
             <div className="project-cards grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
@@ -92,17 +92,17 @@ const Projects = () => {
                                 id={`project-${project.id}-modal`}
                                 onClick={(e) => closeProjectModal(e)}
                             >
-                                    <img
-                                        src={project.image}
-                                        alt={`${project.title}-Mockup`}
-                                        className="bg-cyan-100 block relative md:max-w-[80vw] md:max-h-[80vh]"
-                                    />
+                                <img
+                                    src={project.image}
+                                    alt={`${project.title}-Mockup`}
+                                    className="bg-cyan-100 block relative md:max-w-[80vw] md:max-h-[80vh]"
+                                />
                             </div>
                         </>
                     )
                 })}
             </div>
-        </>
+        </div>
     )
 }
 

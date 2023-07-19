@@ -13,25 +13,21 @@ const navItems = [
     {
         title: 'Projects',
         id: 'projects',
-        className: 'h-fit min-h-fit p-8 md:px-16',
         contents: <Projects />,
     },
     {
         title: 'Recommendations',
         id: 'recommendations',
-        className: 'bg-purple-800 text-white min-h-fit h-fit p-8 md:px-16',
         contents: <Recommendations />,
     },
     {
         title: 'About',
         id: 'about',
-        className: 'h-fit min-h-fit p-8 md:px-16',
         contents: <About />,
     },
     {
         title: 'Contact',
         id: 'contact',
-        className: 'bg-gray-100 min-h-fit h-fit p-8 md:px-16',
         contents: <Contact />,
     },
 ]
@@ -178,11 +174,7 @@ const App = () => {
 
             {navItems.map((item) => {
                 return (
-                    <div
-                        key={item.id}
-                        id={item.id}
-                        className={`section flex flex-col gap-6 ${item.className}`}
-                    >
+                    <div key={item.id} id={item.id}>
                         {item.contents}
                     </div>
                 )
