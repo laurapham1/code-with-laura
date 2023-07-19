@@ -52,26 +52,16 @@ const About = () => {
                 <div className="flex flex-col gap-8">
                     <div>
                         <p className="flex-1">
-                            Hello world! I'm Laura, a driven and meticulous{' '}
-                            <strong>Full Stack/Front-end Engineer</strong>.
-                            <br />
-                            <br /> With a diverse skill set and experiences working in an Australian
-                            unicorn start-up, London EdTech start-up, and
-                         the Australian and UK education systems, I
-                            bring a wealth of expertise to the table.
-                            <br />
-                            <br />
-                            My forte lies in <strong>teamwork</strong>,{' '}
-                            <strong>effective communication</strong>, and
-                            unwavering <strong>attention to detail</strong>,
-                            ensuring high-quality project delivery. As a quick
-                            learner, I continuously adapt to new challenges.
-                            <br />
-                            <br />
-                            If you're seeking a dedicated professional who
-                            excels in <strong>collaboration</strong> and
-                            possesses a keen eye for detail, let's connect and
-                            create exceptional projects together.
+                        Hello world! I'm Laura and it’s nice to meet you. 👩🏻‍💻👋🏼
+
+<br/><br/>I am a driven and meticulous Full Stack Engineer who thrives on continuous learning and possesses a diverse skill set honed through my work at an Australian unicorn start-up, a London EdTech start-up, and within the Australian and UK education systems.
+
+<br/><br/>My strengths lie in teamwork, effective communication, and unwavering attention to detail. These qualities enable me to spearhead projects of the highest quality and drive them to successful completion.
+
+<br/><br/>Collaboration is where I truly shine, leveraging my interpersonal skills to foster a cohesive and productive team environment. I believe in the power of clear communication and the impact it has on project outcomes.
+
+<br/><br/>My unwavering commitment to excellence and passion for problem-solving are the driving forces behind my work. 
+<br/><br/>If you're seeking a Full Stack Engineer who thrives in dynamic environments, values teamwork, and is dedicated to delivering exceptional results, I'm here to bring your projects to new heights.
                         </p>
                     </div>
                     <div>
