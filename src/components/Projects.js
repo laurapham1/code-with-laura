@@ -69,7 +69,9 @@ const Projects = () => {
                                 <img
                                     src={project.image}
                                     alt={`${project.title}-Mockup`}
-                                    className="bg-cyan-100 rounded-t-md"
+                                    className="bg-gray-100 rounded-t-md opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+                                    onLoad={(e) => e.target.style.opacity = 1}
+                                    loading="lazy"
                                 />
                                 <div className="relative p-6 flex flex-col gap-2">
                                     <h1 className="font-bold text-md">
