@@ -39,19 +39,19 @@ const projects = [
 ]
 
 const Projects = () => {
-    const handleClickProject = (e) => {
-        console.log(e)
-        // open modal of project
-        const modalElement = document.getElementById(
-            `project-${e.currentTarget.id}-modal`
-        )
-        modalElement.classList.remove('hidden')
-    }
+    // const handleClickProject = (e) => {
+    //     console.log(e)
+    //     // open modal of project
+    //     const modalElement = document.getElementById(
+    //         `project-${e.currentTarget.id}-modal`
+    //     )
+    //     modalElement.classList.remove('hidden')
+    // }
 
-    const closeProjectModal = (e) => {
-        // const modalElement = document.getElementById(`project-${e.currentTarget.id}-modal`)
-        e.currentTarget.classList.add('hidden')
-    }
+    // const closeProjectModal = (e) => {
+    //     // const modalElement = document.getElementById(`project-${e.currentTarget.id}-modal`)
+    //     e.currentTarget.classList.add('hidden')
+    // }
     return (
         <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6">
             <h1 className="text-center font-light text-2xl">Projects</h1>
@@ -64,7 +64,7 @@ const Projects = () => {
                                 className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition duration-300 cursor-auto opacity-0 duration-[2000ms] ease-in-out`}
                                 key={index}
                                 id={project.id}
-                                onClick={(e) => handleClickProject(e)}
+                                // onClick={(e) => handleClickProject(e)}
                             >
                                 <img
                                     src={project.image}
@@ -90,7 +90,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </button>
-                            <div
+                            {/* <div
                                 className="project-modal hidden fixed w-full h-full bg-black/75 top-0 left-0 z-10 flex flex-col justify-center items-center"
                                 id={`project-${project.id}-modal`}
                                 onClick={(e) => closeProjectModal(e)}
@@ -100,7 +100,7 @@ const Projects = () => {
                                     alt={`${project.title}-Mockup`}
                                     className="bg-cyan-100 block relative md:max-w-[80vw] md:max-h-[80vh]"
                                 />
-                            </div>
+                            </div> */}
                         </>
                     )
                 })}
