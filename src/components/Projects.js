@@ -61,7 +61,7 @@ const Projects = () => {
                     return (
                         <>
                             <button
-                                className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition-color duration-300 cursor-auto`}
+                                className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition duration-300 cursor-auto opacity-0 duration-[2000ms] ease-in-out`}
                                 key={index}
                                 id={project.id}
                                 onClick={(e) => handleClickProject(e)}
@@ -69,9 +69,10 @@ const Projects = () => {
                                 <img
                                     src={project.image}
                                     alt={`${project.title}-Mockup`}
-                                    className="bg-gray-100 rounded-t-md opacity-0 transition-opacity duration-[2000ms] ease-in-out"
-                                    onLoad={(e) => e.target.style.opacity = 1}
+                                    className="bg-gray-100 rounded-t-md w-full max-w-full h-auto"
+                                    onLoad={(e) => e.target.parentNode.style.opacity = 1}
                                     loading="lazy"
+                                    // height="400" width="400"
                                 />
                                 <div className="relative p-6 flex flex-col gap-2">
                                     <h1 className="font-bold text-md">
