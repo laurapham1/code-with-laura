@@ -13,6 +13,7 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
+        "heroku-prebuild": "npm install --dev",
         "build": "webpack --config webpack.prod.js",
         "start": "webpack-dev-server --config webpack.dev.js",
         "test": "react-scripts test",
