@@ -55,12 +55,13 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
 const App = () => {
     const [activeNavItem, setActiveNavItem] = useState('home')
     const [isSubnavOpen, setIsSubnavOpen] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
-    // useEffect(() => {
-    //     const loader = document.getElementById('loader')
-    //     loader.style.opacity = 0
-    //     loader.style.display = 'none'
-    // }, [])
+    useEffect(() => {
+        const loader = document.getElementById('loader')
+        loader.style.opacity = 0
+        setIsLoading(false)
+    }, [])
 
     const handleScroll = useCallback(() => {
         const activeNavPosition = document
@@ -106,6 +107,21 @@ const App = () => {
             element.getBoundingClientRect().top -
             navElement.getBoundingClientRect().bottom
         window.scrollTo({ top: newTop, behavior: 'smooth' })
+    }
+
+    if (isLoading) {
+        return (
+            <div className="h-[100vh] w-[100vw] flex justify-center items-center flex-col gap-4 opacity-1 transition-opacity duration-[2000ms] ease-in-out z-20 bg-white fixed" id="loader">
+                <div
+                    class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-purple-700 border-r-gray-200 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                >
+                    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                        Loading...
+                    </span>
+                </div>
+            </div>
+        )
     }
     return (
         <main>
