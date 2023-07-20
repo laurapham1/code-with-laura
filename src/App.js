@@ -55,13 +55,11 @@ const renderedNavItems = (navItems, activeNavItem, handleClickNavItem) => {
 const App = () => {
     const [activeNavItem, setActiveNavItem] = useState('home')
     const [isSubnavOpen, setIsSubnavOpen] = useState(false)
-    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const loader = document.getElementById('loader')
         loader.style.opacity = 0
         loader.style.display = 'none'
-        setIsLoading(false)
     }, [])
 
     const handleScroll = useCallback(() => {
