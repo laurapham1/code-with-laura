@@ -56,7 +56,7 @@ const Projects = () => {
         <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6">
             <h1 className="text-center font-light text-2xl">Projects</h1>
 
-            <div className="project-cards grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            <div className="project-cards grid grid-cols-1 md:grid-cols-2 gap-8 h-full md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
                 {projects.map((project, index) => {
                     return (
                         <>

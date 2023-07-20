@@ -8,7 +8,7 @@ const Contact = () => {
     return (
         <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6 bg-gray-100">
             <h1 className="text-center font-light text-2xl">Contact</h1>
-            <div className="w-full md:w-[60vw] lg:w-[40vw] m-auto py-10">
+            <div className="w-full md:w-[60vw] lg:w-[40vw] m-auto py-10 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
                 <h2 className="text-4xl mb-6  tracking-wide font-light">
                     Love to hear from you,
                     <br />
