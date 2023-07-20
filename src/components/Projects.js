@@ -72,7 +72,7 @@ const Projects = () => {
                                     className="bg-gray-100 rounded-t-md max-w-full h-auto"
                                     onLoad={(e) => e.target.parentNode.style.opacity = 1}
                                     loading="lazy"
-                                    height="400" width="400"
+                                    height="450" width="450"
                                 />
                                 <div className="relative p-6 flex flex-col gap-2">
                                     <h1 className="font-bold text-md">

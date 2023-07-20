@@ -16,7 +16,7 @@ const Home = () => {
                 <SocialsList />
             </div>
             <div className="hero-image transition-opacity opacity-0 duration-[2000ms] ease-in-out">
-                <img src={profileImage} alt={'profile'} className="max-w-full h-auto" onLoad={(e) => e.target.parentNode.style.opacity = 1} height="400" width="400" />
+                <img src={profileImage} alt={'profile'} className="max-w-full h-auto" onLoad={(e) => e.target.parentNode.style.opacity = 1} height="450" width="450" />
             </div>
         </div>
     )
