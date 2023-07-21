@@ -44,7 +44,6 @@ const Recommendations = () => {
         return () => clearTimeout(timeout)
     })
 
-    console.log(activeRecommendation)
     const handleClickCarouselLeft = () => {
         let nextRecommendation = activeRecommendation - 1
         if (nextRecommendation < 0) {
