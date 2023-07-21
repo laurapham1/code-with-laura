@@ -111,31 +111,19 @@ const App = () => {
 
     if (isLoading) {
         return (
-            <div className="h-[100vh] w-[100vw] flex justify-center items-center flex-col gap-4 opacity-1 transition-opacity duration-[2000ms] ease-in-out z-20 bg-white fixed" id="loader">
+            <div
+                className="h-[100vh] w-[100vw] flex justify-center items-center flex-col gap-4 opacity-1 transition-opacity duration-[2000ms] ease-in-out z-20 bg-white fixed"
+                id="loader"
+            >
                 <div
                     class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-purple-700 border-r-gray-200 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status"
-                >
-                    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                        Loading...
-                    </span>
-                </div>
+                ></div>
             </div>
         )
     }
     return (
         <main>
-            {/* todo: refine page loader */}
-            {/* <div className="h-[100vh] w-[100vw] flex justify-center items-center flex-col gap-4 opacity-1 transition-opacity duration-[2000ms] ease-in-out z-20 bg-white fixed" id="loader">
-                <div
-                    class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-purple-700 border-r-gray-200 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                    role="status"
-                >
-                    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                        Loading...
-                    </span>
-                </div>
-            </div> */}
             <div
                 className="menu fixed top-0 bg-white/95 z-10 rounded w-[-webkit-fill-available] shadow m-2 p-4 pb-0 md:py-0"
                 onMouseLeave={() => setIsSubnavOpen(false)}
@@ -192,7 +180,7 @@ const App = () => {
                     </div>
                 )
             })}
-            <Footer/>
+            <Footer />
         </main>
     )
 }

@@ -59,9 +59,13 @@ const Projects = () => {
             <div className="project-cards grid grid-cols-1 md:grid-cols-2 gap-8 h-full md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
                 {projects.map((project, index) => {
                     return (
-                        <>
+                        <div className="flex items-center justify-center">
+                            <div
+                                class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-gray-400 border-r-gray-200 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] absolute -z-10"
+                                role="status"
+                            ></div>
                             <button
-                                className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition duration-300 cursor-auto opacity-0 duration-[2000ms] ease-in-out`}
+                                className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition duration-300 cursor-auto opacity-0 ease-in-out`}
                                 key={index}
                                 id={project.id}
                                 // onClick={(e) => handleClickProject(e)}
@@ -70,9 +74,12 @@ const Projects = () => {
                                     src={project.image}
                                     alt={`${project.title}-Mockup`}
                                     className="bg-gray-100 rounded-t-md max-w-full h-auto"
-                                    onLoad={(e) => e.target.parentNode.style.opacity = 1}
+                                    onLoad={(e) =>
+                                        (e.target.parentNode.style.opacity = 1)
+                                    }
                                     loading="lazy"
-                                    height="600" width="600"
+                                    height="auto"
+                                    width="100%"
                                 />
                                 <div className="relative p-6 flex flex-col gap-2">
                                     <h1 className="font-bold text-md">
@@ -101,7 +108,7 @@ const Projects = () => {
                                     className="bg-cyan-100 block relative md:max-w-[80vw] md:max-h-[80vh]"
                                 />
                             </div> */}
-                        </>
+                        </div>
                     )
                 })}
             </div>
