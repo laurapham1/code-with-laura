@@ -2,14 +2,16 @@ import sammiImage from '../assets/images/sammi-mockup.png'
 import furrealImage from '../assets/images/furreal-mockup.png'
 import todolistImage from '../assets/images/todolist-mockup.png'
 import sammiMobileImage from '../assets/images/sammi-mobile-mockup.png'
-
+import { FaLink, FaGithub } from 'react-icons/fa'
 const projects = [
     {
         id: 1,
         title: 'Sammi',
         description: 'A mental health support app for teachers & students',
         image: sammiImage,
-        link: '',
+        github: 'https://github.com/lauranpham/Sammi',
+        website: '',
+
         skills: ['ruby', 'javascript', 'rails'],
     },
     {
@@ -17,7 +19,9 @@ const projects = [
         title: 'Furreal',
         description: 'A pet rental service app',
         image: furrealImage,
-        link: '',
+        github: 'https://github.com/ferdifish/furreal',
+        website: '',
+
         skills: ['ruby', 'javascript', 'rails'],
     },
     {
@@ -25,33 +29,23 @@ const projects = [
         title: 'Fun to do list',
         description: 'An aesthetic daily to do list',
         image: todolistImage,
-        link: '',
-        skills: ['react', 'javascript', 'node', 'graphql'],
+        github: 'https://github.com/laurapham1/fun-todolist',
+        website: 'http://www.fun-todolist.live',
+
+        skills: ['react', 'javascript', 'node'],
     },
     {
         id: 4,
         title: 'Sammi - mobile app',
         description: 'An emotion diary and social connection app',
         image: sammiMobileImage,
-        link: '',
+        github: 'https://github.com/laurapham1/BeeMindful',
+        website: '',
         skills: ['react native', 'javascript', 'mobile app'],
     },
 ]
 
 const Projects = () => {
-    // const handleClickProject = (e) => {
-    //     console.log(e)
-    //     // open modal of project
-    //     const modalElement = document.getElementById(
-    //         `project-${e.currentTarget.id}-modal`
-    //     )
-    //     modalElement.classList.remove('hidden')
-    // }
-
-    // const closeProjectModal = (e) => {
-    //     // const modalElement = document.getElementById(`project-${e.currentTarget.id}-modal`)
-    //     e.currentTarget.classList.add('hidden')
-    // }
     return (
         <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6">
             <h1 className="text-center font-light text-2xl">Projects</h1>
@@ -68,15 +62,14 @@ const Projects = () => {
                                 className={`project-card bg-white shadow rounded-md text-start h-fit hover:bg-gray-100 transition duration-300 cursor-auto opacity-0 ease-in-out`}
                                 key={index}
                                 id={project.id}
-                                // onClick={(e) => handleClickProject(e)}
                             >
                                 <img
                                     src={project.image}
                                     alt={`${project.title}-Mockup`}
                                     className="bg-gray-100 rounded-t-md max-w-full h-auto"
-                                    onLoad={(e) =>
-                                        (e.target.parentNode.style.opacity = 1)
-                                    }
+                                    onLoad={(e) => {
+                                        return (e.target.parentNode.style.opacity = 1)
+                                    }}
                                     loading="lazy"
                                     height="auto"
                                     width="100%"
@@ -95,19 +88,28 @@ const Projects = () => {
                                             )
                                         })}
                                     </div>
+                                    <div className="flex flex-row gap-4 justify-end">
+                                        {project.github && (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <FaGithub className="text-gray-600 text-xl hover:text-purple-800 rounded transition-color" />
+                                            </a>
+                                        )}
+                                        {project.website && (
+                                            <a
+                                                href={project.website}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <FaLink className="text-gray-600 text-xl hover:text-purple-800 rounded transition-color" />
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </button>
-                            {/* <div
-                                className="project-modal hidden fixed w-full h-full bg-black/75 top-0 left-0 z-10 flex flex-col justify-center items-center"
-                                id={`project-${project.id}-modal`}
-                                onClick={(e) => closeProjectModal(e)}
-                            >
-                                <img
-                                    src={project.image}
-                                    alt={`${project.title}-Mockup`}
-                                    className="bg-cyan-100 block relative md:max-w-[80vw] md:max-h-[80vh]"
-                                />
-                            </div> */}
                         </div>
                     )
                 })}
