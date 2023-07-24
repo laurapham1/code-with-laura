@@ -32,7 +32,7 @@ const projects = [
         github: 'https://github.com/laurapham1/fun-todolist',
         website: 'http://www.fun-todolist.live',
 
-        skills: ['react', 'javascript', 'node'],
+        skills: ['react', 'javascript', 'gatsby'],
     },
     {
         id: 4,
