@@ -59,7 +59,7 @@ const Recommendations = () => {
         setActiveRecommendation(nextRecommendation)
     }
     return (
-        <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6 bg-purple-800 text-white">
+        <div className="section h-fit min-h-fit p-8 md:px-16 flex flex-col gap-6 bg-purple-800 text-white" id="recommendations">
             <h1 className="text-center font-light text-2xl">Recommendations</h1>
 
             <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">

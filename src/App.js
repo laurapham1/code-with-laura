@@ -175,7 +175,7 @@ const App = () => {
 
             {navItems.map((item) => {
                 return (
-                    <div key={item.id} id={item.id}>
+                    <div key={item.id}>
                         {item.contents}
                     </div>
                 )

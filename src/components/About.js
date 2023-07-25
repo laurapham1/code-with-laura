@@ -47,7 +47,7 @@ const softSkills = [
 // ]
 const About = () => {
     return (
-        <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6">
+        <div className="section h-fit min-h-fit p-8 md:px-16 flex flex-col gap-6" id="about">
             <h1 className="text-center font-light text-2xl">About</h1>
             <div className="flex gap-4 flex-col lg:flex-row items-center md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
                 <div className="flex flex-col gap-8">

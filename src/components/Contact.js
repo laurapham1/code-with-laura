@@ -6,7 +6,7 @@ const Contact = () => {
     const [message, setMessage] = useState('')
 
     return (
-        <div className="h-fit min-h-fit p-8 md:px-16 section flex flex-col gap-6 bg-gray-100">
+        <div className="section h-fit min-h-fit p-8 md:px-16 flex flex-col gap-6 bg-gray-100" id="contact">
             <h1 className="text-center font-light text-2xl">Contact</h1>
             <div className="w-full md:w-[60vw] lg:w-[40vw] m-auto py-10 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
                 <h2 className="text-4xl mb-6  tracking-wide font-light">
