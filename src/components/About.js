@@ -7,14 +7,15 @@
 const technicalSkills = [
     'javascript',
     'react',
-    'node',
+    'typescript',
     'php',
+    'elixir',
     'ruby',
     'rails',
-    'elixir',
     'graphql',
     'aws',
-    'azure',
+    'mongoDB',
+    'node',
 ]
 const softSkills = [
     'communication',
