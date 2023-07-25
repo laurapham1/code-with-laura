@@ -59,7 +59,10 @@ const Recommendations = () => {
         setActiveRecommendation(nextRecommendation)
     }
     return (
-        <div className="section h-fit min-h-fit p-8 md:px-16 flex flex-col gap-6 bg-purple-800 text-white" id="recommendations">
+        <div
+            className="section h-fit min-h-fit p-8 md:px-16 flex flex-col gap-6 bg-purple-800 text-white"
+            id="recommendations"
+        >
             <h1 className="text-center font-light text-2xl">Recommendations</h1>
 
             <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
@@ -71,26 +74,29 @@ const Recommendations = () => {
                             }`}
                         >
                             <FaQuoteLeft className="m-auto" />
-                            <blockquote cite={recommendationsLink}>
-                                <p class="text-md md:text-xl italic font-medium ">
-                                    {recommendation.content}
-                                </p>
-                            </blockquote>
-                            <figcaption class="flex gap-2 md:gap-0 items-center justify-center mt-6 space-x-3 flex-col md:flex-row">
-                                <img
-                                    className="w-6 h-6 rounded-full"
-                                    src={`https://eu.ui-avatars.com/api/?name=${recommendation.owner}&size=500&background=random`}
-                                    alt="profile"
-                                />
-                                <div class="flex flex-col items-center md:divide-gap-2 md:flex-row md:divide-x-2 divide-gray-500 dark:divide-gray-700 ">
-                                    <p class="md:pr-3 font-medium ">
-                                        {recommendation.owner}
+                            <a
+                                href="https://www.linkedin.com/in/lauranpham/details/recommendations/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <blockquote cite={recommendationsLink}>
+                                    <p class="text-md md:text-xl italic font-medium ">
+                                        {recommendation.content}
                                     </p>
-                                    <p class="md:pl-3 text-sm">
-                                        {recommendation.ownerRole}
-                                    </p>
-                                </div>
-                            </figcaption>
+                                </blockquote>
+                                <figcaption class="flex gap-2 md:gap-0 items-center justify-center mt-6 space-x-3 flex-col md:flex-row">
+                                    <img
+                                        className="w-6 h-6 rounded-full"
+                                        src={`https://eu.ui-avatars.com/api/?name=${recommendation.owner}&size=500&background=random`}
+                                        alt="profile"
+                                    />
+                                    <div class="flex flex-col items-center md:divide-gap-2 md:flex-row md:divide-x-2 divide-gray-500 dark:divide-gray-700 ">
+                                        <p class="text-sm">
+                                            {recommendation.ownerRole}
+                                        </p>
+                                    </div>
+                                </figcaption>
+                            </a>
                         </figure>
                     )
                 })}
