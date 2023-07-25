@@ -65,7 +65,11 @@ const Recommendations = () => {
         >
             <h1 className="text-center font-light text-2xl">Recommendations</h1>
 
-            <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-col gap-4 justify-center items-center min-h-inherit h-full md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
+            <div className="carousel relative w-full overflow-hidden after:clear-both after:block after:content-[''] flex flex-row gap-4 justify-center items-center min-h-inherit h-full md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1128px] m-auto">
+                <FaChevronLeft
+                    onClick={() => handleClickCarouselLeft()}
+                    className="cursor-pointer hover:text-gray-500 transition-color duration-300"
+                />
                 {recommendations.map((recommendation, index) => {
                     return (
                         <figure
@@ -100,13 +104,9 @@ const Recommendations = () => {
                         </figure>
                     )
                 })}
-                <FaChevronLeft
-                    onClick={() => handleClickCarouselLeft()}
-                    className="absolute top-[50%] left-0 cursor-pointer hover:text-gray-500 transition-color duration-300"
-                />
                 <FaChevronRight
                     onClick={() => handleClickCarouselRight()}
-                    className="absolute top-[50%] right-0 cursor-pointer hover:text-gray-500 transition-color duration-300"
+                    className="cursor-pointer hover:text-gray-500 transition-color duration-300"
                 />
             </div>
         </div>
