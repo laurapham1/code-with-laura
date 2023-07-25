@@ -6,26 +6,6 @@ import { FaLink, FaGithub } from 'react-icons/fa'
 const projects = [
     {
         id: 1,
-        title: 'Sammi',
-        description: 'A mental health support app for teachers & students',
-        image: sammiImage,
-        github: 'https://github.com/lauranpham/Sammi',
-        website: '',
-
-        skills: ['ruby', 'javascript', 'rails'],
-    },
-    {
-        id: 2,
-        title: 'Furreal',
-        description: 'A pet rental service app',
-        image: furrealImage,
-        github: 'https://github.com/ferdifish/furreal',
-        website: '',
-
-        skills: ['ruby', 'javascript', 'rails'],
-    },
-    {
-        id: 3,
         title: 'Fun to do list',
         description: 'An aesthetic daily to do list',
         image: todolistImage,
@@ -35,13 +15,33 @@ const projects = [
         skills: ['react', 'javascript', 'gatsby'],
     },
     {
-        id: 4,
+        id: 2,
         title: 'Sammi - mobile app',
         description: 'An emotion diary and social connection app',
         image: sammiMobileImage,
         github: 'https://github.com/laurapham1/BeeMindful',
         website: '',
         skills: ['react native', 'javascript', 'mobile app'],
+    },
+    {
+        id: 3,
+        title: 'Sammi',
+        description: 'A mental health support app for teachers & students',
+        image: sammiImage,
+        github: 'https://github.com/lauranpham/Sammi',
+        website: 'https://www.youtube.com/watch?v=uayJ4QoKlVw&t=330s',
+
+        skills: ['ruby', 'javascript', 'rails'],
+    },
+    {
+        id: 4,
+        title: 'Furreal',
+        description: 'A pet rental service app',
+        image: furrealImage,
+        github: 'https://github.com/ferdifish/furreal',
+        website: '',
+
+        skills: ['ruby', 'javascript', 'rails'],
     },
 ]
 
