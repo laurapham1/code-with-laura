@@ -22,7 +22,7 @@ const SocialsList = () => {
                 </a>
             </button>
             <button className="hover:scale-125 ease-in-out duration-300 p-2 border rounded-[50%]">
-                <a href="https://www.linktr.ee/codewithlaura" target="_blank" rel="noreferrer">
+                <a href="https://www.linktr.ee/lauranpham" target="_blank" rel="noreferrer">
                     <FaTree className="text-lg"/>
                 </a>
             </button>
